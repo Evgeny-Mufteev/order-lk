@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Главная</title>
+  <meta name="description" content="order-lk">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="assets/plugins/swiper/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/sprite.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    @@include('_include/header.html')
+    @@include('_include/breadcrumb.html')
+    <main>
+      <div class="container">
+        <h1 class="page-title">Личный кабинет</h1>
+        <div class="tabs content">
+          <div class="tabs__btns content__btns">
+            <button class="tabs__btn content__btn is-active">
+              <svg class="badges icon user">
+                <use href="./assets/svg/sprite.svg#user"></use>
+              </svg>
+              Мой профиль
+            </button>
+            <button class="tabs__btn content__btn">
+              <svg class="badges icon fire">
+                <use href="./assets/svg/sprite.svg#fire"></use>
+              </svg>
+              Мои бонусы
+            </button>
+            <button class="tabs__btn content__btn">
+              <svg class="badges icon order">
+                <use href="./assets/svg/sprite.svg#order"></use>
+              </svg>
+              Заказы с сайта
+            </button>
+            <button class="tabs__btn content__btn">
+              <svg class="badges icon chat">
+                <use href="./assets/svg/sprite.svg#chat"></use>
+              </svg>
+              Сообщения
+            </button>
+            <button class="tabs__btn content__btn">
+              <svg class="badges icon book">
+                <use href="./assets/svg/sprite.svg#book"></use>
+              </svg>
+              Мои отзывы
+            </button>
+            <button class="tabs__btn content__btn">
+              <svg class="badges icon pin">
+                <use href="./assets/svg/sprite.svg#pin"></use>
+              </svg>
+              Заметки
+            </button>
+          </div>
+
+          <div class="tabs__items content__items">
+            <div class="tabs__item is-active">
+              <p>Мой профиль</p>
+            </div>
+            <div class="tabs__item content__item">
+              <p>Мои бонусы</p>
+            </div>
+            <div class="tabs__item content__item">
+              <p>Заказы с сайта</p>
+            </div>
+            <div class="tabs__item content__item">
+              <p>Сообщения</p>
+            </div>
+            <div class="tabs__item content__item">
+              <p>Мои отзывы</p>
+            </div>
+            <div class="tabs__item content__item">
+              <p>Заметки</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+    @@include('_include/footer.html')
+  </div>
+  <div class="overlay"></div>
+
+  <script defer src="assets/plugins/swiper/swiper-bundle.min.js"></script>
+  <script defer src="assets/plugins/pristine/pristine.min.js"></script>
+
+  <script defer src="js/index.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+
+</html>
