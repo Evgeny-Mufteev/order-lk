@@ -64,7 +64,132 @@
 
           <div class="tabs__items content__items">
             <div class="tabs__item is-active">
-              <p>Мой профиль</p>
+              <div class="profile">
+                <h2 class="profile__title">Мой профиль</h2>
+                <form class="profile__form" action="#1" name="profile_form">
+
+                  <div class="profile__box">
+                    <h3 class="profile__subtitle">Персональные данные</h3>
+                    <div class="profile__input-wrap js-editing">
+                      <input class="profile__input js-editing-input" type="text" name="profile_full_name"
+                        id="profile-full-name" placeholder="Константин Константинович Константинопалькский" readonly>
+                      <label class="profile__label" for="profile-full-name">ФИО</label>
+                      <span class="profile__icon-edit js-icon">
+                        <svg class="icon edit-fill">
+                          <use href="./assets/svg/sprite.svg#edit-fill"></use>
+                        </svg>
+                      </span>
+                    </div>
+
+                    <div class="profile__input-wrap js-editing">
+                      <input class="profile__input js-editing-input" type="tel" name="profile_number"
+                        id="profile-number" value="" readonly placeholder="+7 (900) 000-00-00">
+                      <label class="profile__label" for="profile-number">Мобильный телефон</label>
+                      <span class="profile__icon-edit js-icon">
+                        <svg class="icon edit-fill">
+                          <use href="./assets/svg/sprite.svg#edit-fill"></use>
+                        </svg>
+                      </span>
+                    </div>
+
+                    <div class="profile__input-wrap js-editing">
+                      <input class="profile__input js-editing-input" type="email" name="profile_email"
+                        id="profile-email" value="" readonly placeholder="kon@gmail.com">
+                      <label class="profile__label" for="profile-email">E-mail</label>
+                      <span class="profile__icon-edit js-icon">
+                        <svg class="icon edit-fill">
+                          <use href="./assets/svg/sprite.svg#edit-fill"></use>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Если почта не подтверждена -->
+                  <div class="verification-message">Внимание! Адрес не подтвержден! <a
+                      href="javascript:void(0);">Выслать подтверждение</a>
+                  </div>
+
+                  <!-- Повторное предупреждение -->
+                  <!-- <div class="verification-message">Подверждение отправлено на почту.<a
+                      href="javascript:void(0);">Отправить еще раз</a>
+                  </div> -->
+
+                  <div class="profile__holder">
+                    <h3 class="profile__subtitle">Пароль</h3>
+
+                    <div class="profile__input-wrap">
+                      <input class="profile__input js-new-password js-show-hide-password" type="password"
+                        name="profile_new_password" placeholder="Новый пароль">
+                      <span class="profile__icon-view"></span>
+                    </div>
+
+                    <p class="info-message js-message">Пароль должен содержать не менее 6 символов</p>
+
+                    <div class="profile__input-wrap">
+                      <input class="profile__input js-confirm-password js-show-hide-password" type="password"
+                        name="profile_confirm_password" placeholder="Подтвердите пароль">
+                      <span class="profile__icon-view"></span>
+                    </div>
+
+                  </div>
+
+                  <div class="profile__block">
+                    <h3 class="profile__subtitle">Информационные сообщения</h3>
+
+                    <div class="profile__checkbox-wrap">
+                      <input class="profile__checkbox switch" id="newsletter" type="checkbox" name="newsletter">
+                      <label class="profile__checkbox-label" for="newsletter">E-mail-рассылку о новостях Ордера,
+                        информацию о партнерах Ордера</label>
+                    </div>
+
+
+                    <div class="profile__checkbox-wrap">
+                      <input class="profile__checkbox switch" id="newsletter-promotions" type="checkbox"
+                        name="newsletter_promotions">
+                      <label class="profile__checkbox-label" for="newsletter-promotions">E-mail-рассылку об акциях
+                        Ордера</label>
+                    </div>
+
+                    <div class="profile__checkbox-wrap">
+                      <input class="profile__checkbox switch" id="newsletter-bonuses" type="checkbox"
+                        name="newsletter_bonuses">
+                      <label class="profile__checkbox-label" for="newsletter-bonuses">E-mail-рассылку с информацией
+                        по действующим бонусам</label>
+                    </div>
+
+                    <div class="profile__checkbox-wrap">
+                      <input class="profile__checkbox switch" id="newsletter-bonus-balance" type="checkbox"
+                        name="newsletter_bonus_balance">
+                      <label class="profile__checkbox-label" for="newsletter-bonus-balance">СМС-рассылку о балансе
+                        бонусов на номер телефона*</label>
+                    </div>
+
+                    <div class="profile__checkbox-wrap">
+                      <input class="profile__checkbox switch" id="newsletter-email-checks" type="checkbox"
+                        name="newsletter_email_checks">
+                      <label class="profile__checkbox-label" for="newsletter-email-checks">Получать электронные чеки по
+                        email</label>
+                    </div>
+                  </div>
+
+                  <button class="profile__btn" type="submit">Сохранить изменения</button>
+
+                  <div class="profile__notes">
+                    <p>
+                      * Согласно <a href="javascript:void(0);">п. 2.22. Правил участия в бонусной программе</a>
+                      «Бон-Бонь» объем информации о бонусном
+                      балансе, направляемой с помощью смс-рассылкок, e-mail-рассылкок, определяется Организатором в
+                      тексте указанных правил.
+                    </p>
+                    <p>
+                      Вы дали <a href="javascript:void(0);">Согласие</a> с условиями <a
+                        href="javascript:void(0);">Политики конфиденциальности</a>. Оно
+                      может быть отозвано на основании письменного заявления в произвольной форме.
+                    </p>
+                  </div>
+
+                </form>
+              </div>
             </div>
             <div class="tabs__item content__item">
               <p>Мои бонусы</p>
