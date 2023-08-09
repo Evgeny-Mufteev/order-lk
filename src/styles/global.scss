@@ -191,6 +191,11 @@ input[type=submit] {
 button[disabled],
 html input[disabled] {
   cursor: default;
+  background: #D9D9D9;
+
+  &:hover {
+    background: #D9D9D9;
+  }
 }
 
 button::-moz-focus-inner,
@@ -288,7 +293,7 @@ li {
   font-display: swap;
   font-family: RobotoBold;
   src: local("Roboto-Bold"), url("./fonts/Roboto-Bold.woff2") format("woff2");
-  font-weight: 500;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -332,7 +337,7 @@ picture img {
   display: none;
   width: 100vw;
   height: 100vh;
-  background: #3D3D3D;
+  background: rgba(36, 36, 36, 0.30);
   position: fixed;
   top: 0;
   left: 0;
@@ -344,30 +349,6 @@ picture img {
   display: block;
 }
 
-// .btn {
-//   border: none;
-//   background: var(--red-color);
-//   color: var(--white-color);
-//   padding: 20px 60px;
-//   font-weight: 400;
-//   font-size: 16px;
-//   line-height: 20px;
-//   text-transform: uppercase;
-//   cursor: pointer;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin: 0 auto;
-//   transition: 0.3s ease;
-// }
-
-// .btn:hover {
-//   background: #DB4A40;
-// }
-
-// .btn:active {
-//   background: #CF554D;
-// }
 
 fieldset {
   border: 0;
@@ -398,7 +379,8 @@ main {
 }
 
 .breadcrumbs {
-  margin: 18px 0 32px;
+  background: #F1F1F1;
+  padding: 18px 0 32px;
 
   &__list {
     display: flex;
@@ -503,6 +485,14 @@ main {
       }
     }
   }
+
+  &__btn--mobile {
+    display: none;
+  }
+
+  &__btns-modal {
+    display: none;
+  }
 }
 
 .profile {
@@ -533,7 +523,7 @@ main {
     font-family: RobotoMedium;
   }
 
-  h3.profile__subtitle {
+  &__subtitle {
     margin-bottom: 16px;
     color: #353535;
     font-family: RobotoMedium;
@@ -553,6 +543,7 @@ main {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    pointer-events: none;
   }
 
   &__label {
@@ -568,6 +559,8 @@ main {
     position: absolute;
     right: -40px;
     top: 11px;
+    width: 24px;
+    height: 24px;
   }
 
   &__icon-view {
@@ -619,14 +612,15 @@ main {
       align-items: flex-start;
       justify-content: center;
 
+
       &:last-child {
         margin-bottom: 0;
       }
     }
-  }
 
-  &__block {
-    margin-top: 32px;
+    .profile__input {
+      pointer-events: all;
+    }
   }
 
   // Стилизация чекбокса 
@@ -713,7 +707,7 @@ main {
     }
 
     &.switch {
-      width: 46px;
+      min-width: 46px;
       border-radius: 1.1rem;
 
       &:after {
@@ -753,6 +747,7 @@ main {
 
   &__block {
     position: relative;
+    margin-top: 32px;
     margin-bottom: 46px;
 
     &::after {
@@ -764,6 +759,10 @@ main {
       line-height: normal;
       position: absolute;
       bottom: -22px;
+    }
+
+    .profile__subtitle {
+      margin-bottom: 24px;
     }
   }
 
@@ -820,16 +819,176 @@ main {
     }
   }
 
+  &__input-email .text-help {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    color: #898989;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__input-phone .text-help {
+    position: absolute;
+    bottom: -94px;
+    left: 0;
+    color: #898989;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
 }
 
+.popup-saving-profile {
+  display: none;
+  width: 453px;
+  height: 94px;
+  border-radius: 10px;
+  background: #FFF;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
 
+  &.active {
+    display: block;
+  }
 
+  &__inner {
+    padding: 32px;
+
+    P {
+      color: #353535;
+      font-family: RobotoMedium;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 131.688%;
+    }
+  }
+
+  &__close {
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: 32px;
+  }
+}
+
+.popup-privacy-policy {
+  display: none;
+  width: 794px;
+  height: 672px;
+  border-radius: 10px;
+  background: #FFF;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+
+  &.active {
+    display: block;
+  }
+
+  &__inner {
+    padding: 32px 13px 32px 32px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__title {
+    color: #353535;
+    font-family: RobotoMedium;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 131.688%;
+    margin-bottom: 24px;
+  }
+
+  &__desc {
+    color: #353535;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 149.688%;
+    margin-bottom: 24px;
+  }
+
+  &__subtitle {
+    color: #353535;
+    font-family: RobotoBold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 149.688%;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: #353535;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 149.688%;
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__close {
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+  }
+
+  &__content {
+    height: 92%;
+    overflow-y: scroll;
+    padding-right: 16px;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #D9D9D9;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #E31E24;
+      border-radius: 10px;
+      border: px solid #E31E24;
+    }
+  }
+}
 
 /* adaptive */
 @media screen and (max-width: 1349px) {
 
   .container {
     max-width: 1000px;
+  }
+
+  .content__btns {
+    width: 245px;
+  }
+
+  .content__items {
+    width: 730px;
   }
 
 }
@@ -840,25 +999,308 @@ main {
     max-width: 720px;
   }
 
+  .page-title {
+    display: none;
+  }
+
+  .breadcrumbs {
+    &__link {
+      font-size: 12px;
+    }
+  }
+
+  .content {
+    flex-direction: column;
+    margin-bottom: 48px;
+
+    &__btns {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: end;
+      padding: 0;
+      margin-bottom: 12px;
+    }
+
+    &__btn {
+      flex-direction: column;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      padding: 15px 16px;
+
+      &:first-child {
+        border-radius: 10px 0 0 10px;
+      }
+
+      &:last-child {
+        border-radius: 0 10px 10px 0;
+      }
+
+      &.is-active {
+        border-left: none
+      }
+    }
+
+    &__items {
+      width: 100%;
+      padding: 24px;
+    }
+
+  }
+
+  .profile {
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__input-wrap {
+      width: 474px;
+    }
+
+    &__input {
+      font-size: 14px;
+    }
+
+    &__icon-edit {
+      right: -58px;
+    }
+
+    & input[type=checkbox]+label {
+      font-size: 14px;
+    }
+
+    &__btn {
+      width: 100%;
+    }
+
+    &__notes {
+      margin-top: 32px;
+      max-width: 100%;
+
+      p {
+        font-size: 14px;
+
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+
+
+  }
+
+  .popup-saving-profile {
+    width: 499px;
+
+    &__inner {
+
+      P {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    &__close {
+      right: 90px;
+    }
+  }
+
+  .popup-privacy-policy {
+    width: 673px;
+    height: 768px;
+
+  }
+
+
 }
 
 @media screen and (max-width: 767px) {
 
   .container {
     max-width: 100%;
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   .no-scroll {
     padding-right: 0;
   }
 
-}
-
-@media screen and (max-width: 479px) {
-
-  .container {
-    padding: 0 16px;
+  .breadcrumbs {
+    padding: 16px 0;
   }
 
+  .content {
+
+    &__items {
+      padding: 24px 16px;
+    }
+
+    &__btns {
+      position: fixed;
+      bottom: 0;
+      width: -webkit-fill-available;
+      left: 10px;
+      right: 10px;
+      bottom: 20px;
+      z-index: 20;
+      box-shadow: 0px 4px 18px 0px rgba(210, 210, 210, 0.25);
+      margin-bottom: 0;
+      height: 60px;
+    }
+
+    &__btn {
+      max-width: 60px;
+      max-height: 60px;
+      min-width: 60px;
+      min-height: 60px;
+      font-size: 10px;
+      padding: 0;
+      padding-top: 8px;
+    }
+
+    &__btn--mobile {
+      display: flex;
+      border-radius: 0 10px 10px 0;
+
+      &:hover {
+        color: #353535;
+      }
+    }
+
+    &__btn-mobile-hidden {
+      display: none;
+    }
+
+    &__btns-modal {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      bottom: 64px;
+      right: 0;
+      width: 177px;
+      background: #fff;
+      border-radius: 10px;
+
+      &.active {
+        display: flex;
+      }
+
+      .content__btn {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        max-width: unset;
+        max-height: unset;
+        min-width: unset;
+        min-height: unset;
+        border-radius: 10px;
+        padding: 10px 12px;
+        padding: 6px 12px;
+      }
+
+      .badges {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 0;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .profile {
+    &__input-wrap {
+      width: 100%;
+    }
+
+    &__box .profile__input-wrap {
+      width: calc(100% - 48px);
+    }
+
+    &__input {
+      text-overflow: ellipsis;
+    }
+
+    &__icon-edit {
+      right: -36px;
+    }
+
+    .verification-message {
+      padding-right: 57px;
+    }
+
+    &__checkbox-wrap {
+      display: flex;
+    }
+
+    &__block {
+      margin-bottom: 62px;
+
+      &::after {
+        bottom: -44px;
+      }
+    }
+  }
+
+  .popup-saving-profile {
+    width: 288px;
+    height: 88px;
+
+    &__inner {
+      padding: 32px 15px;
+
+      P {
+        font-size: 18px;
+        text-align: unset;
+      }
+    }
+
+    &__close {
+      right: 20px;
+    }
+  }
+
+  .popup-privacy-policy {
+    width: 100%;
+    height: 80%;
+
+
+    &__inner {
+      padding: 16px;
+    }
+
+    &__title {
+      width: 250px;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    &__close {
+      right: 16px;
+      top: 16px;
+    }
+
+    &__content {
+      height: 89%;
+      overflow-y: scroll;
+      padding-right: 10px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .profile {
+    &__holder {
+      .profile__input-wrap {
+        margin-bottom: 48px;
+      }
+    }
+  }
 }

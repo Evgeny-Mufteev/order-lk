@@ -21,3 +21,36 @@
   height: 24px;
   cursor: pointer;
 }
+
+.icon.close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  .badges {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .breadcrumbs-icon {
+    width: 10px;
+    height: 7px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .badges {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 3px;
+  }
+
+  .badges-mobile {
+    width: 16px;
+    height: 4px;
+    margin-bottom: 13px;
+    margin-top: 13px;
+  }
+}

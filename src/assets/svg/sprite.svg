@@ -43,12 +43,23 @@
   <circle cx="12" cy="12.9834" r="3" stroke="#898989" stroke-width="2" fill="none"/>
   <path d="M20.188 11.9177C20.5762 12.389 20.7703 12.6246 20.7703 12.9834C20.7703 13.3422 20.5762 13.5778 20.188 14.0491C18.7679 15.7733 15.6357 18.9834 12 18.9834C8.36427 18.9834 5.23206 15.7733 3.81197 14.0491C3.42381 13.5778 3.22973 13.3422 3.22973 12.9834C3.22973 12.6246 3.42381 12.389 3.81197 11.9177C5.23206 10.1935 8.36427 6.9834 12 6.9834C15.6357 6.9834 18.7679 10.1935 20.188 11.9177Z" stroke="#898989" stroke-width="2" fill="none"/>
 </symbol>
+
+<symbol id="other" viewBox="0 0 16 4">
+  <circle cx="2" cy="2" r="2" fill="#353535"/>
+  <circle cx="8" cy="2" r="2" fill="#353535"/>
+  <circle cx="14" cy="2" r="2" fill="#353535"/>
+</symbol>
+
+<symbol id="close" viewBox="0 0 24 24">
+  <path d="M18 6L6 18" stroke="#353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6 6L18 18" stroke="#353535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
  
 
 <!-- <symbol id="" >
   
 </symbol> -->
 
-<!-- <svg class="icon view">
-        <use href="./assets/svg/sprite.svg#view"></use>
+<!-- <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
     </svg> -->
