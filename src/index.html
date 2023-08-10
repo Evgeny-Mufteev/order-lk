@@ -25,13 +25,13 @@
         <div class="tabs content">
           <div class="tabs__btns content__btns">
 
-            <button class="tabs__btn content__btn is-active mob-menu-1">
+            <button class="tabs__btn content__btn mob-menu-1">
               <svg class="badges icon user">
                 <use href="./assets/svg/sprite.svg#user"></use>
               </svg>
               Мой профиль
             </button>
-            <button class="tabs__btn content__btn mob-menu-2">
+            <button class="tabs__btn content__btn is-active mob-menu-2">
               <svg class="badges icon fire">
                 <use href="./assets/svg/sprite.svg#fire"></use>
               </svg>
@@ -90,7 +90,8 @@
           </div>
 
           <div class="tabs__items content__items">
-            <div class="tabs__item is-active">
+            <!-- Профиль -->
+            <div class="tabs__item content__item">
               <div class="profile">
                 <h2 class="profile__title">Мой профиль</h2>
                 <form class="profile__form js-profile-form" method="post" action="#1" name="profile_form"
@@ -219,8 +220,150 @@
                 </form>
               </div>
             </div>
-            <div class="tabs__item content__item">
-              <p>Мои бонусы</p>
+
+            <!-- Бонусы -->
+            <div class="tabs__item content__item is-active">
+              <div class="bonus">
+                <h2 class="profile__title">Мои бонусы</h2>
+                <div class="bonus__card">
+
+                  <div class="bonus__card-balance">
+                    <p class="bonus__card-caption">Общий бонусный баланс</p>
+                    <p class="bonus__card-quantity">77.00</p>
+                    <p class="bonus__card-say">бонусов</p>
+                    <p class="bonus__card-active">Активных: <span>77.00</span></p>
+                    <p class="bonus__card-info">1 бонус = 1 рубль скидки</p>
+                  </div>
+
+                  <div class="bonus__card-map">
+                    <div class="bonus__card-block">
+                      <img class="bonus__card-img" src="./assets/svg/logo-map.svg" alt="">
+                      <p class="bonus__card-headline">Виртуальная клубная карта</p>
+                    </div>
+                    <div class="bonus__card-box">
+                      <p class="bonus__card-number">434VG0044049</p>
+                    </div>
+                  </div>
+
+                  <div class="bonus__card-data">
+                    <div class="bonus__card-holder">
+                      <p class="bonus__card-heading">Номер карты</p>
+                      <p class="bonus__card-snumber">434VG0044049</p>
+                    </div>
+                    <div class="bonus__card-holder">
+                      <p class="bonus__card-heading">Номер привязки**</p>
+                      <p class="bonus__card-snumber">+7 (900) 000-00-00</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="bonus__desc">
+                  <div class="bonus__desc-info">
+                    <p class="">* После сохранения программы, изменения вступят в силу в течение суток</p>
+                    <p class="">
+                      ** Если карта привязана к номеру телефона на кассе и ей присвоен статус «Основная», то карта будет
+                      определяться на кассе по номеру телефона
+                    </p>
+                  </div>
+                  <div class="bonus__desc-btns">
+                    <button class="bonus__desc-btn bonus__desc-btn--white">Заблокировать карту</button>
+                    <button class="bonus__desc-btn bonus__desc-btn--green">Добавить новую карту</button>
+                  </div>
+                </div>
+                <div class="bonus__order">
+                  <div class="bonus__order-box">
+                    <h2 class="bonus__order-title">Покупки в магазине <span>12</span></h2>
+                    <svg class="icon chevron">
+                      <use href="./assets/svg/sprite.svg#chevron"></use>
+                    </svg>
+                  </div>
+
+                  <div class="bonus__order-holder">
+                    <div class="bonus__order-sort">
+                      <p>
+                        Сортировать по дате:
+                        <span class="sort-item active js-bonus__order-sort">от новых к старым</span>
+                        <span class="sort-item js-bonus__order-sort">от старых к новым</span>
+                      </p>
+                    </div>
+                    <div class="bonus__order-content">
+                      <div class="bonus__order-item">
+                        <div class="bonus__order-quantity">
+                          <p>+28</p>
+                        </div>
+                        <div class="bonus__order-transaction">
+                          <p class="bonus__order-date desc">Дата: <span class="value">15.09.2022</span></p>
+                          <p class="bonus__order-sum desc">Сумма чека: <span class="value">100 441.52</span></p>
+                        </div>
+                        <div class="bonus__order-shop">
+                          <p class="bonus__order-store desc">Магазин: <span class="value">Родионова</span></p>
+                          <p class="bonus__order-write-off desc">Списано бонусов: <span class="value">348</span></p>
+                        </div>
+                        <div class="bonus__order-operation">
+                          <p class="bonus__order-action desc">Операция: <span class="value">Покупка по чеку</span></p>
+                          <p class="bonus__order-burning desc">Бонусы сгорят: <span class="value">27.10.2022</span></p>
+                        </div>
+                      </div>
+                      <div class="bonus__order-item">
+                        <div class="bonus__order-quantity">
+                          <p>+28</p>
+                        </div>
+                        <div class="bonus__order-transaction">
+                          <p class="bonus__order-date desc">Дата: <span class="value">15.09.2022</span></p>
+                          <p class="bonus__order-sum desc">Сумма чека: <span class="value">100 441.52</span></p>
+                        </div>
+                        <div class="bonus__order-shop">
+                          <p class="bonus__order-store desc">Магазин: <span class="value">Родионова</span></p>
+                          <p class="bonus__order-write-off desc">Списано бонусов: <span class="value">348</span></p>
+                        </div>
+                        <div class="bonus__order-operation">
+                          <p class="bonus__order-action desc">Операция: <span class="value">Покупка по чеку</span></p>
+                          <p class="bonus__order-burning desc">Бонусы сгорят: <span class="value">27.10.2022</span></p>
+                        </div>
+                      </div>
+                      <div class="bonus__order-item">
+                        <div class="bonus__order-quantity">
+                          <p>+28</p>
+                        </div>
+                        <div class="bonus__order-transaction">
+                          <p class="bonus__order-date desc">Дата: <span class="value">15.09.2022</span></p>
+                          <p class="bonus__order-sum desc">Сумма чека: <span class="value">100 441.52</span></p>
+                        </div>
+                        <div class="bonus__order-shop">
+                          <p class="bonus__order-store desc">Магазин: <span class="value">Родионова</span></p>
+                          <p class="bonus__order-write-off desc">Списано бонусов: <span class="value">348</span></p>
+                        </div>
+                        <div class="bonus__order-operation">
+                          <p class="bonus__order-action desc">Операция: <span class="value">Покупка по чеку</span></p>
+                          <p class="bonus__order-burning desc">Бонусы сгорят: <span class="value">27.10.2022</span></p>
+                        </div>
+                      </div>
+                      <div class="bonus__order-item">
+                        <div class="bonus__order-quantity">
+                          <p>+28</p>
+                        </div>
+                        <div class="bonus__order-transaction">
+                          <p class="bonus__order-date desc">Дата: <span class="value">15.09.2022</span></p>
+                          <p class="bonus__order-sum desc">Сумма чека: <span class="value">100 441.52</span></p>
+                        </div>
+                        <div class="bonus__order-shop">
+                          <p class="bonus__order-store desc">Магазин: <span class="value">Родионова</span></p>
+                          <p class="bonus__order-write-off desc">Списано бонусов: <span class="value">348</span></p>
+                        </div>
+                        <div class="bonus__order-operation">
+                          <p class="bonus__order-action desc">Операция: <span class="value">Покупка по чеку</span></p>
+                          <p class="bonus__order-burning desc">Бонусы сгорят: <span class="value">27.10.2022</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bonus__order-pagination">
+                      <button class="bonus__order-btn">Показать еще</button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
             </div>
             <div class="tabs__item content__item">
               <p>Заказы с сайта</p>

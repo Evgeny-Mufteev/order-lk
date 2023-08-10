@@ -843,6 +843,346 @@ main {
 
 }
 
+.bonus {
+
+  .profile__title {
+    margin-bottom: 32px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 48px;
+  }
+
+  &__card-balance {
+    width: 226px;
+    height: 200px;
+    padding: 24px;
+    border-radius: 15px;
+    background: #F1F1F1;
+    margin-right: 12px;
+  }
+
+  &__card-caption {
+    color: #353535;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+  }
+
+  &__card-quantity {
+    color: #E31E24;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: RobotoMedium;
+    margin-bottom: 2px;
+  }
+
+  &__card-say {
+    color: #E31E24;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: RobotoMedium;
+    margin-bottom: 12px;
+  }
+
+  &__card-active {
+    color: #898989;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+
+    span {
+      color: #898989;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &__card-info {
+    color: #898989;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124.188%;
+  }
+
+  &__card-map {
+    width: 314px;
+    height: 200px;
+    border-radius: 15px;
+    background: #E31E24;
+    padding: 28px 28px 25px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-right: 24px;
+  }
+
+  &__card-headline {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: RobotoMedium;
+    margin-top: 9px;
+  }
+
+  &__card-number {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__card-img {
+    width: 104px;
+    height: 30px;
+  }
+
+  &__card-heading {
+    color: #898989;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
+
+  &__card-snumber {
+    color: #353535;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__card-holder {
+    margin-bottom: 36px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__desc {
+    margin-top: 48px;
+  }
+
+  &__desc-info {
+    margin-bottom: 36px;
+
+    p {
+      color: #898989;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150.688%;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__desc-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150.688%;
+    border-radius: 4px;
+    transition: var(--base-transition);
+  }
+
+  &__desc-btns {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__desc-btn--white {
+    width: 384px;
+    height: 48px;
+    border: 1px solid #353535;
+    background: #fff;
+    color: #353535;
+
+    &:hover {
+      background: #CCC;
+      color: #353535;
+      border: none;
+    }
+  }
+
+  &__desc-btn--green {
+    border: none;
+    background: #32893B;
+    color: #FFF;
+    width: 427px;
+    height: 48px;
+
+    &:hover {
+      background: #25782D;
+    }
+  }
+
+  &__order-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    background: #ECECEC;
+    height: 56px;
+    padding: 0 24px;
+    cursor: pointer;
+  }
+
+  &__order-title {
+    color: #353535;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: RobotoMedium;
+
+    span {
+      margin-left: 12px;
+      color: #353535;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      background: #fff;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  }
+
+  &__order {
+    margin-top: 32px;
+  }
+
+  &__order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 16px;
+    margin-top: 32px;
+  }
+
+  .desc {
+    color: #898989;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 9px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .value {
+    color: #353535;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__order-quantity {
+    p {
+      color: #E31E24;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      font-family: RobotoMedium;
+    }
+  }
+
+  &__order-sort {
+    margin-top: 32px;
+
+    p {
+      color: #000;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .sort-item {
+      color: #898989;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      cursor: pointer;
+
+      &:last-child {
+        margin-left: 16px;
+      }
+
+      &.active {
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-bottom: 1px dashed #000;
+      }
+    }
+  }
+
+  &__order-pagination {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__order-btn {
+    display: flex;
+    width: 192px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid #353535;
+    background: #fff;
+    transition: var(--base-transition);
+    user-select: none;
+
+    &:hover {
+      background: #CCC;
+      color: #353535;
+      border: 1px solid #CCC;
+    }
+  }
+
+}
+
 .popup-saving-profile {
   display: none;
   width: 453px;

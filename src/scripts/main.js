@@ -276,4 +276,20 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   handleFormSubmitPage('.js-profile-form', '.js-saving-profile');
+
+  // Сортировка в бонусах
+  const sortItems = () => {
+    const arrItems = document.querySelectorAll('.js-bonus__order-sort');
+
+    arrItems.forEach((el) => {
+      el.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        arrItems.forEach((item) => {
+          item.classList.remove('active');
+        });
+        el.classList.add('active');
+      });
+    });
+  };
+  sortItems();
 });
