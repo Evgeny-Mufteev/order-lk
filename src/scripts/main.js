@@ -156,8 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const input = iconView.previousElementSibling;
         if (input.type === 'password') {
           input.type = 'text';
+          iconView.classList.add('hide');
         } else {
           input.type = 'password';
+          iconView.classList.remove('hide');
         }
       });
     });

@@ -31,13 +31,13 @@
               </svg>
               Мой профиль
             </button>
-            <button class="tabs__btn content__btn is-active mob-menu-2">
+            <button class="tabs__btn content__btn mob-menu-2">
               <svg class="badges icon fire">
                 <use href="./assets/svg/sprite.svg#fire"></use>
               </svg>
               Мои бонусы
             </button>
-            <button class="tabs__btn content__btn mob-menu-3">
+            <button class="tabs__btn content__btn mob-menu-3 is-active">
               <svg class="badges icon order">
                 <use href="./assets/svg/sprite.svg#order"></use>
               </svg>
@@ -222,7 +222,7 @@
             </div>
 
             <!-- Бонусы -->
-            <div class="tabs__item content__item is-active">
+            <div class="tabs__item content__item">
               <div class="bonus">
                 <div class="bonus__inner swiper cart-slider">
                   <div class="future-slider">
@@ -1000,9 +1000,41 @@
 
             </div>
 
-            <div class="tabs__item content__item">
-              <p>Заказы с сайта</p>
+            <!-- Заказы с сайта -->
+            <div class="tabs__item content__item is-active">
+              <div class="order">
+                <!-- Если нет заказов -->
+                <div class="order__block">
+                  <h2 class="profile__title">Заказы с сайта</h2>
+
+                  <div class="bonus__order-no-shopping">
+                    <p>У вас пока нет покупок</p>
+                    <p>
+                      Но вы можете воспользоваться нашим
+                      <a href="javascript:void(0);">интернет-магазином</a>
+                      и оформить заказ не выходя из дома:)
+                    </p>
+                    <a class="bonus__order-link" href="javascript:void(0);">Перейти в каталог</a>
+                  </div>
+                </div>
+
+                <!-- Если есть заказы -->
+                <div class="order__block">
+                  <h2 class="profile__title">Заказы с сайта</h2>
+                  <div class="bonus__order-sort">
+                    <p>
+                      Сортировать по дате:
+                      <span class="sort-item--mob">
+                        <span class="sort-item active js-bonus__order-sort">от новых к старым</span>
+                        <span class="sort-item js-bonus__order-sort">от старых к новым</span>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+
             <div class="tabs__item content__item">
               <p>Сообщения</p>
             </div>

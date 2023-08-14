@@ -631,13 +631,17 @@ main {
   }
 
   &__icon-view {
-    background: url('../assets/svg/View.svg');
+    background: url('../assets/svg/not-View.svg');
     position: absolute;
     right: 16px;
     top: 13px;
     width: 24px;
     height: 24px;
     cursor: pointer;
+
+    &.hide {
+      background: url('../assets/svg/View.svg');
+    }
   }
 
   .verification-message {
@@ -1499,6 +1503,21 @@ main {
   }
 
 }
+
+.order {
+
+  &__block {
+    background: #fff;
+    border-radius: 10px;
+    padding: 36px;
+    box-shadow: 2px 2px 2px 0px rgba(215, 215, 215, 0.25);
+
+    &:last-child {
+      margin-top: 12px;
+    }
+  }
+}
+
 
 .popup-saving-profile {
   display: none;
