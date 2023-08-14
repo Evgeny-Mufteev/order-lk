@@ -31,6 +31,8 @@
 .icon.chevron {
   width: 24px;
   height: 24px;
+  stroke: #898989;
+  transition: var(--base-transition);
 }
 
 @media screen and (max-width: 1023px) {

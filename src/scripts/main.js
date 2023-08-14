@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   };
-
   enableInputEditingOnIconClick();
 
   // Маска телефона
@@ -145,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
       infoMessage.textContent = 'Пароль должен содержать не менее 6 символов';
     }
   };
-
   newPasswordInput.addEventListener('input', checkPasswords);
   confirmPasswordInput.addEventListener('input', checkPasswords);
 
@@ -232,8 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
   handleModalPopup('.js-btn-privacy-policy', '.js-privacy-policy');
   handleModalPopup(undefined, '.js-saving-profile');
   handleModalPopup('.js-btn-menu-modal', '.js-menu-modal');
+  handleModalPopup('.js-add-card', '.js-add-new-card');
+  handleModalPopup('.js-btn-block-card', '.js-block-card');
 
-  // Валидация и отправка формы
+  // Валидация формы
   const handleFormSubmitPage = (formItem, popup) => {
     const form = document.querySelector(formItem);
     const modalBlock = document.querySelector(popup);
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pristine = new Pristine(form);
 
     const handleInputValidation = (inputElement) => {
-      inputElement.addEventListener('input', () => {
+      inputElement?.addEventListener('input', () => {
         const valid = pristine.validate(inputElement);
         btn.disabled = !valid;
       });
@@ -262,20 +262,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const valid = pristine.validate();
 
       if (valid) {
+        evt.preventDefault();
         modalBlock?.classList.add('active');
         document.querySelector('.overlay')?.classList.add('active');
         document.body.classList.add('no-scroll');
 
         const formData = Object.fromEntries(new FormData(evt.target).entries());
-        formData.profile_number = formData.profile_number.replace(/\D/g, '');
+        formData.phone_number = formData.phone_number.replace(/\D/g, '');
 
         console.log(formData);
         // evt.target.submit();
       }
     });
   };
-
   handleFormSubmitPage('.js-profile-form', '.js-saving-profile');
+  handleFormSubmitPage('.js-new-card_form', undefined);
 
   // Сортировка в бонусах
   const sortItems = () => {
@@ -292,4 +293,168 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   sortItems();
+
+  // открытие закрытие аккардиона
+  const handleInfoHideShowBlock = (el) => {
+    el = el.target;
+
+    if (el.closest('.js-item') && !el.closest('.js-item.active')) {
+      document.querySelectorAll('.js-item').forEach((el) => {
+        el.classList.remove('active');
+        let scrollHeight = el.closest('.js-item');
+        scrollHeight.querySelector('.js-desc').style.maxHeight = null;
+      });
+      let scrollHeight = el.closest('.js-item');
+      el.closest('.js-item').classList.add('active');
+      scrollHeight.querySelector('.js-desc').style.maxHeight =
+        scrollHeight.querySelector('.js-desc').scrollHeight + 'px';
+    } else if (el.closest('.js-item') && !el.closest('.js-desc')) {
+      el.closest('.js-item').classList.remove('active');
+      let scrollHeight = el.closest('.js-item');
+      scrollHeight.querySelector('.js-desc').style.maxHeight = null;
+    }
+  };
+  document.addEventListener('click', handleInfoHideShowBlock);
+
+  // Слайдер бонусных карт
+  const handleWindowResize = () => {
+    if (window.innerWidth < 768) {
+      const futureSlider = document.querySelector('.future-slider');
+      futureSlider?.classList.remove('future-slider');
+      futureSlider?.classList.add('swiper-wrapper');
+
+      const cartSlider = new Swiper('.cart-slider', {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+    } else {
+      const futureSlider = document.querySelector('.swiper-wrapper');
+      futureSlider?.classList.remove('swiper-wrapper');
+      futureSlider?.classList.add('future-slider');
+    }
+  };
+  handleWindowResize();
+  // window.addEventListener('resize', handleWindowResize);
+
+  // Удаление заголовков карт в слайдере
+  const blockBonus = document.querySelector('.bonus');
+  const arrTitle = blockBonus.querySelectorAll('.profile__title');
+
+  const removeCardTitlesFromSlider = () => {
+    if (window.innerWidth < 768) {
+      arrTitle.forEach((title) => {
+        title.style.display = 'block';
+      });
+    } else {
+      for (let i = 1; i < arrTitle.length; i++) {
+        arrTitle[i].style.display = 'none';
+      }
+    }
+  };
+
+  removeCardTitlesFromSlider();
+  window.addEventListener('resize', handleWindowResize);
+
+  // Выпадающий список в регистрации новой карты
+  if (document.querySelector('.js-sort-box')) {
+    const handleParameterSelection = (el) => {
+      el = el.target;
+      // Открытие списка
+      if (el.closest('.js-sort-btn')) {
+        el.closest('.js-sort-btn').classList.toggle('active');
+      }
+
+      // Удаление активного выбранного пункта из списка
+      if (el.closest('.js-sort-list')) {
+        const allEl = el.closest('.js-sort-list').querySelectorAll('.js-sort-item');
+        allEl.forEach((listItem) => {
+          listItem.classList.remove('active');
+        });
+      }
+
+      // Подстановка выбранного пункта
+      if (el.classList.contains('js-sort-item')) {
+        el.classList.add('active');
+        el.closest('.js-sort-box').querySelector('.selecting-item').value = el.textContent;
+        el.closest('.js-sort-box')
+          .querySelector('.selecting-item')
+          .setAttribute('value', el.textContent);
+        document.querySelector('.selecting-item').dispatchEvent(new Event('input'));
+      }
+
+      // Закрытие списка
+      if (!el.closest('.js-sort-btn')) {
+        document.querySelectorAll('.js-sort-btn').forEach((el) => {
+          el.classList.remove('active');
+        });
+      }
+    };
+    document.addEventListener('click', handleParameterSelection);
+  }
+
+  // Передатать id выбранной карты для блокировки
+  const lockSelectedCard = (el) => {
+    el = el.target;
+    if (el.closest('.js-bonus-card-item')) {
+      document.querySelector('.js-select-blocked-card').value =
+        el.closest('.js-bonus-card-item').id;
+    }
+  };
+  const blockForm = document.querySelector('.bonus__inner');
+  blockForm.addEventListener('click', lockSelectedCard);
+
+  // Блокировака карты
+  const blockMap = () => {
+    const arrBtns = document.querySelectorAll('.js-bonus-card-item');
+    const selectCard = document.querySelector('.js-select-blocked-card');
+    const btnBlocked = document.querySelector('.js-btn-blocked');
+
+    btnBlocked.addEventListener('click', () => {
+      const selectedValue = selectCard.value;
+
+      arrBtns.forEach((el) => {
+        const id = el.id;
+        if (selectedValue === id && !el.classList.contains('bonus-map--blocked')) {
+          el.classList.add('bonus-map--blocked');
+          el.classList.remove('bonus-map--non-base-map');
+          el.classList.remove('bonus-map--non-bonuses');
+          el.classList.remove('bonus-map--base-map');
+          handleModalPopup(undefined, '.js-block-card');
+        }
+      });
+    });
+  };
+  blockMap();
+
+  // Свап карт
+  const cardUnlock = (el) => {
+    el = el.target;
+
+    // разблокировать и сделать не основной
+    if (el.closest('.bonus__desc-btn--blocked')) {
+      el.closest('.bonus-map').classList.remove('bonus-map--blocked');
+
+      el.closest('.bonus-map').classList.add('bonus-map--non-base-map');
+    }
+
+    // Сделать основной
+    if (el.closest('.js-make-main')) {
+      const allBonusMaps = document.querySelectorAll('.bonus-map');
+
+      // Удаляем класс у всех элементов
+      allBonusMaps.forEach((bonusMap) => {
+        bonusMap.classList.remove('bonus-map--base-map');
+        bonusMap.classList.remove('bonus-map--non-bonuses');
+        bonusMap.classList.add('bonus-map--non-base-map');
+      });
+
+      // Добавляем класс только к текущему элементу
+      const closestBonusMap = el.closest('.bonus-map');
+      closestBonusMap.classList.remove('bonus-map--non-base-map');
+      closestBonusMap.classList.add('bonus-map--base-map');
+    }
+  };
+
+  document.addEventListener('click', cardUnlock);
 });
