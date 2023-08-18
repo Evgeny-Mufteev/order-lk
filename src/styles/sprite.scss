@@ -35,6 +35,12 @@
   transition: var(--base-transition);
 }
 
+.icon.repeat {
+  width: 24px;
+  height: 24px;
+  transition: var(--base-transition);
+}
+
 @media screen and (max-width: 1023px) {
   .badges {
     margin-right: 0;

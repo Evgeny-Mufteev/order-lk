@@ -167,21 +167,28 @@ document.addEventListener('DOMContentLoaded', () => {
   togglePasswordVisibility();
 
   // Изменение текста у пунктов меню, удалить и передалать на беке через $_SERVER['HTTP_USER_AGENT']
+  // так же удалить классы
   if (window.innerWidth < 768) {
     const menuProfile = document.querySelector('.mob-menu-1');
     const menuBonuses = document.querySelector('.mob-menu-2');
     const menuOrder = document.querySelector('.mob-menu-3');
+    const arrOrderRepeat = document.querySelectorAll('.mob-menu-4');
 
     const newTextProfile = 'Профиль';
     const newTextBonuses = 'Бонусы';
     const newTextOrder = 'Заказы';
+    const neworderRepeat = 'Повторить';
 
     menuProfile.childNodes[2].nodeValue = newTextProfile;
     menuBonuses.childNodes[2].nodeValue = newTextBonuses;
     menuOrder.childNodes[2].nodeValue = newTextOrder;
+
+    arrOrderRepeat.forEach((orderRepeat) => {
+      orderRepeat.childNodes[2].nodeValue = neworderRepeat;
+    });
   }
 
-  // модальные окна
+  // вызов и закрытие модального окна
   const handleModalPopup = (btn, blockModal) => {
     const btns = document.querySelectorAll(btn);
     const modal = document.querySelector(blockModal);
@@ -296,28 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   sortItems();
 
-  // открытие закрытие аккардиона
-  const handleInfoHideShowBlock = (el) => {
-    el = el.target;
-
-    if (el.closest('.js-item') && !el.closest('.js-item.active')) {
-      document.querySelectorAll('.js-item').forEach((el) => {
-        el.classList.remove('active');
-        let scrollHeight = el.closest('.js-item');
-        scrollHeight.querySelector('.js-desc').style.maxHeight = null;
-      });
-      let scrollHeight = el.closest('.js-item');
-      el.closest('.js-item').classList.add('active');
-      scrollHeight.querySelector('.js-desc').style.maxHeight =
-        scrollHeight.querySelector('.js-desc').scrollHeight + 'px';
-    } else if (el.closest('.js-item') && !el.closest('.js-desc')) {
-      el.closest('.js-item').classList.remove('active');
-      let scrollHeight = el.closest('.js-item');
-      scrollHeight.querySelector('.js-desc').style.maxHeight = null;
-    }
-  };
-  document.addEventListener('click', handleInfoHideShowBlock);
-
   // Слайдер бонусных карт
   const handleWindowResize = () => {
     if (window.innerWidth < 768) {
@@ -337,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   handleWindowResize();
-  // window.addEventListener('resize', handleWindowResize);
+  window.addEventListener('resize', handleWindowResize);
 
   // Удаление заголовков карт в слайдере
   const blockBonus = document.querySelector('.bonus');
@@ -436,7 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // разблокировать и сделать не основной
     if (el.closest('.bonus__desc-btn--blocked')) {
       el.closest('.bonus-map').classList.remove('bonus-map--blocked');
-
       el.closest('.bonus-map').classList.add('bonus-map--non-base-map');
     }
 
@@ -457,6 +441,85 @@ document.addEventListener('DOMContentLoaded', () => {
       closestBonusMap.classList.add('bonus-map--base-map');
     }
   };
-
   document.addEventListener('click', cardUnlock);
+
+  // Сортировка в заказах модалка
+  const sortOrders = (el) => {
+    el = el.target;
+    const modal = document.querySelector('.js-sort-modal');
+
+    if (el.closest('.js-sort-modal-btn') || el.closest('.js-sort-modal')) {
+      modal.classList.add('active');
+    } else {
+      if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      }
+    }
+
+    if (el.closest('.sort-list')) {
+      var allEl = el.closest('.sort-list').querySelectorAll('.js-sort-link');
+      allEl.forEach(function (listItem) {
+        listItem.classList.remove('active');
+      });
+      document.querySelector('.js-sort-modal').classList.remove('active');
+    }
+
+    if (el.classList.contains('js-sort-link')) {
+      el.closest('.js-block-sort').querySelector('.js-sort-modal-btn').textContent = el.textContent;
+      el.classList.add('active');
+    }
+  };
+  document.addEventListener('click', sortOrders);
+
+  // Аккардеоны
+  const handleInfoHideShowBlock = (el) => {
+    el = el.target;
+
+    if (el.closest('.js-title') && !el.closest('.js-title.active')) {
+      document.querySelectorAll('.js-title').forEach((el) => {
+        el.classList.remove('active');
+        let scrollHeight = el.closest('.js-item');
+        let descElement = scrollHeight.querySelector('.js-desc');
+        descElement.style.maxHeight = null;
+        descElement.classList.remove('active');
+      });
+
+      let scrollHeight = el.closest('.js-item');
+      el.closest('.js-title').classList.add('active');
+      let descElement = scrollHeight.querySelector('.js-desc');
+      descElement.style.maxHeight = descElement.scrollHeight + 'px';
+      descElement.classList.add('active');
+    } else if (el.closest('.js-title') && !el.closest('.js-desc')) {
+      el.closest('.js-title').classList.remove('active');
+      let scrollHeight = el.closest('.js-item');
+      let descElement = scrollHeight.querySelector('.js-desc');
+      descElement.classList.remove('active');
+      descElement.style.maxHeight = null;
+    }
+  };
+  document.addEventListener('click', handleInfoHideShowBlock);
+
+  // Вызов несколих модальных окон
+  const biba = (el) => {
+    el = el.target;
+
+    if (el.closest('.order__actions-mob')) {
+      document.querySelectorAll('.js-modal-actions-block').forEach(function (el) {
+        el.classList.remove('active');
+      });
+      el.closest('.js-modal-actions-item')
+        .querySelector('.js-modal-actions-block')
+        .classList.add('active');
+      document.querySelector('.overlay').classList.add('active');
+      document.body.classList.add('no-scroll');
+    }
+
+    if (!el.closest('.js-modal-actions-item')) {
+      document.querySelectorAll('.js-modal-actions-block').forEach(function (el) {
+        el.classList.remove('active');
+      });
+    }
+  };
+
+  document.addEventListener('click', biba);
 });

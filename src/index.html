@@ -228,7 +228,7 @@
                   <div class="future-slider">
                     <!-- основая карта -->
                     <div class="swiper-slide">
-                      <div class="bonus-map bonus-map--base-map js-bonus-card-item" id="1">
+                      <div class="bonus-map bonus-map--base-map js-bonus-card-item js-item" id="1">
                         <h2 class="profile__title">Мои бонусы</h2>
                         <div class="bonus__card">
 
@@ -283,15 +283,14 @@
                             <button class="bonus__desc-btn bonus__desc-btn--red js-make-main">Сделать основной</button>
                           </div>
                         </div>
-                        <div class="bonus__order js-item active">
-                          <div class="bonus__order-box">
+                        <div class="bonus__order">
+                          <div class="bonus__order-box js-title active">
                             <h2 class="bonus__order-title">Покупки в магазине <span>12</span></h2>
                             <svg class="icon chevron">
                               <use href="./assets/svg/sprite.svg#chevron"></use>
                             </svg>
                           </div>
-
-                          <div class="bonus__order-holder js-desc">
+                          <div class="bonus__order-holder js-desc active">
                             <div class="bonus__order-sort">
                               <p>
                                 Сортировать по дате:
@@ -452,14 +451,12 @@
                               </div>
                             </div>
                           </div>
-
                         </div>
-
                       </div>
                     </div>
                     <!-- НЕ основная карта -->
                     <div class="swiper-slide">
-                      <div class="bonus-map  bonus-map--non-base-map js-bonus-card-item" id="2">
+                      <div class="bonus-map  bonus-map--non-base-map js-bonus-card-item js-item" id="2">
                         <h2 class="profile__title">Мои бонусы</h2>
                         <div class="bonus__card">
                           <div class="bonus__card-balance">
@@ -512,14 +509,13 @@
                             <button class="bonus__desc-btn bonus__desc-btn--blocked">Разблокировать карту</button>
                           </div>
                         </div>
-                        <div class="bonus__order js-item">
-                          <div class="bonus__order-box">
+                        <div class="bonus__order">
+                          <div class="bonus__order-box js-title">
                             <h2 class="bonus__order-title">Покупки в магазине <span>12</span></h2>
                             <svg class="icon chevron">
                               <use href="./assets/svg/sprite.svg#chevron"></use>
                             </svg>
                           </div>
-
                           <div class="bonus__order-holder js-desc">
                             <div class="bonus__order-sort">
                               <p>
@@ -681,13 +677,12 @@
                               </div>
                             </div>
                           </div>
-
                         </div>
                       </div>
                     </div>
                     <!-- Карта без бонусов и покупок -->
                     <div class="swiper-slide">
-                      <div class="bonus-map bonus-map--non-bonuses js-bonus-card-item" id="3">
+                      <div class="bonus-map bonus-map--non-bonuses js-bonus-card-item js-item" id="3">
                         <h2 class="profile__title">Мои бонусы</h2>
                         <div class="bonus__card">
 
@@ -741,14 +736,13 @@
                             <button class="bonus__desc-btn bonus__desc-btn--red js-make-main">Сделать основной</button>
                           </div>
                         </div>
-                        <div class="bonus__order js-item active">
-                          <div class="bonus__order-box">
+                        <div class="bonus__order ">
+                          <div class="bonus__order-box js-title">
                             <h2 class="bonus__order-title">Покупки в магазине <span>12</span></h2>
                             <svg class="icon chevron">
                               <use href="./assets/svg/sprite.svg#chevron"></use>
                             </svg>
                           </div>
-
                           <div class="bonus__order-holder js-desc">
                             <div class="bonus__order-no-shopping">
                               <p>У вас пока нет покупок</p>
@@ -760,14 +754,12 @@
                               <a class="bonus__order-link" href="javascript:void(0);">Перейти в каталог</a>
                             </div>
                           </div>
-
                         </div>
-
                       </div>
                     </div>
                     <!-- Заблокированная карта -->
                     <div class="swiper-slide">
-                      <div class="bonus-map bonus-map--blocked js-bonus-card-item" id="4">
+                      <div class="bonus-map bonus-map--blocked js-bonus-card-item js-item" id="4">
                         <h2 class="profile__title">Мои бонусы</h2>
                         <div class="bonus__card">
                           <div class="bonus__card-balance">
@@ -820,14 +812,13 @@
                             <button class="bonus__desc-btn bonus__desc-btn--red js-make-main">Сделать основной</button>
                           </div>
                         </div>
-                        <div class="bonus__order js-item">
-                          <div class="bonus__order-box">
+                        <div class="bonus__order">
+                          <div class="bonus__order-box js-title">
                             <h2 class="bonus__order-title">Покупки в магазине <span>12</span></h2>
                             <svg class="icon chevron">
                               <use href="./assets/svg/sprite.svg#chevron"></use>
                             </svg>
                           </div>
-
                           <div class="bonus__order-holder js-desc">
                             <div class="bonus__order-sort">
                               <p>
@@ -989,10 +980,10 @@
                               </div>
                             </div>
                           </div>
-
                         </div>
                       </div>
                     </div>
+
                   </div>
 
                 </div>
@@ -1005,7 +996,7 @@
               <div class="order">
                 <!-- Если нет заказов -->
                 <div class="order__block">
-                  <h2 class="profile__title">Заказы с сайта</h2>
+                  <h2 class="profile__title">Заказы с сайта <span>0</span></h2>
 
                   <div class="bonus__order-no-shopping">
                     <p>У вас пока нет покупок</p>
@@ -1020,17 +1011,442 @@
 
                 <!-- Если есть заказы -->
                 <div class="order__block">
-                  <h2 class="profile__title">Заказы с сайта</h2>
-                  <div class="bonus__order-sort">
+                  <h2 class="profile__title">Заказы с сайта <span>5</span></h2>
+                  <div class="bonus__order-sort js-block-sort">
                     <p>
-                      Сортировать по дате:
+                      Сортировать по <span class="sort-selected js-sort-modal-btn">дате</span>:
                       <span class="sort-item--mob">
                         <span class="sort-item active js-bonus__order-sort">от новых к старым</span>
                         <span class="sort-item js-bonus__order-sort">от старых к новым</span>
                       </span>
                     </p>
+                    <div class="sort-modal js-sort-modal">
+                      <ul class="sort-list">
+                        <li class="sort-point"><a href="javascript:void(0);"
+                            class="sort-link active js-sort-link">Дате</a></li>
+                        <li class="sort-point"><a href="javascript:void(0);" class="sort-link js-sort-link">Номеру
+                            заказа</a></li>
+                        <li class="sort-point"><a href="javascript:void(0);" class="sort-link js-sort-link">Статусу</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="order__items">
+                    <!-- исполнен -->
+                    <div class="order__item js-item">
+                      <div class="order__head js-title">
+                        <div class="order__data">
+                          <p>
+                            Заказ №<span class="order__number">186000</span>
+                            <span class="order__date">от 19.10.2022, 14:45</span>
+                          </p>
+                        </div>
+                        <div class="order__status">
+                          <p class="order__flag _fulfilled">Исполнен</p>
+                          <svg class="icon chevron">
+                            <use href="./assets/svg/sprite.svg#chevron"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="order__info">
+                        <div class="order__option">
+                          <div class="order__gettable">
+                            <p>Способ получения: <span>Самовывоз, магазин Попова</span></p>
+                          </div>
+                          <div class="order__phone">
+                            <p>Телефон получателя: <span>+7 (900) 000-00-00</span></p>
+                          </div>
+                        </div>
+                        <div class="order__total">
+                          <div class="order__total-sum">
+                            <p>Итого: <span>4 305,65 ₽</span></p>
+                          </div>
+                          <div class="order__number-goods">
+                            <p>Товаров: <span>3 шт.</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order__holder js-desc">
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                            2акк*2.0а/ч (709.2.2.70)
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 6 999 ₽ </div>
+                            <div class="order__sum">6 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Набор инструмента 94 предмета AUTOVIRAZH AV-212094 1/2"1/4"DR, CrV
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 2 999 ₽ </div>
+                            <div class="order__sum">2 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Dulux Professional Bindo 3 Cтандарт краска для стен и потолков белая антиблик (База BW) 9 л
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 4 599 ₽ </div>
+                            <div class="order__sum">4 599 ₽ </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="order__actions js-modal-actions-item">
+                        <div class="order__actions-desc js-modal-actions-block">
+                          <button class="order__btn mob-menu-4">
+                            <img class="order__actions-icon" src="./assets/svg/repeatmob.svg" alt="">
+                            Повторить покупки
+                            <svg class="icon repeat">
+                              <use href="./assets/svg/sprite.svg#repeat"></use>
+                            </svg>
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/moremob.svg" alt="">
+                            Подробнее
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/cancelmob.svg" alt="">
+                            Отменить
+                          </button>
+                        </div>
+                        <div class="order__actions-mob js-btn-actions-mob">
+                          <svg class="icon other">
+                            <use href="./assets/svg/sprite.svg#other"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- принят -->
+                    <div class="order__item js-item">
+                      <div class="order__head js-title active">
+                        <div class="order__data">
+                          <p>
+                            Заказ №<span class="order__number">186000</span>
+                            <span class="order__date">от 19.10.2022, 14:45</span>
+                          </p>
+                        </div>
+                        <div class="order__status">
+                          <p class="order__flag _accepted">Принят</p>
+                          <svg class="icon chevron">
+                            <use href="./assets/svg/sprite.svg#chevron"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="order__info">
+                        <div class="order__option">
+                          <div class="order__gettable">
+                            <p>Способ получения: <span>Самовывоз, магазин Попова</span></p>
+                          </div>
+                          <div class="order__phone">
+                            <p>Телефон получателя: <span>+7 (900) 000-00-00</span></p>
+                          </div>
+                        </div>
+                        <div class="order__total">
+                          <div class="order__total-sum">
+                            <p>Итого: <span>14 597 ₽ </span></p>
+                          </div>
+                          <div class="order__number-goods">
+                            <p>Товаров: <span>3 шт.</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order__holder js-desc active">
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                            2акк*2.0а/ч (709.2.2.70)
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 6 999 ₽ </div>
+                            <div class="order__sum">6 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Набор инструмента 94 предмета AUTOVIRAZH AV-212094 1/2"1/4"DR, CrV
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 2 999 ₽ </div>
+                            <div class="order__sum">2 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Dulux Professional Bindo 3 Cтандарт краска для стен и потолков белая антиблик (База BW) 9 л
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 4 599 ₽ </div>
+                            <div class="order__sum">4 599 ₽ </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="order__actions js-modal-actions-item">
+                        <div class="order__actions-desc js-modal-actions-block">
+                          <button class="order__btn mob-menu-4">
+                            <img class="order__actions-icon" src="./assets/svg/repeatmob.svg" alt="">
+                            Повторить покупки
+                            <svg class="icon repeat">
+                              <use href="./assets/svg/sprite.svg#repeat"></use>
+                            </svg>
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/moremob.svg" alt="">
+                            Подробнее
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/cancelmob.svg" alt="">
+                            Отменить
+                          </button>
+                        </div>
+                        <div class="order__actions-mob js-btn-actions-mob">
+                          <svg class="icon other">
+                            <use href="./assets/svg/sprite.svg#other"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- отказ -->
+                    <div class="order__item js-item">
+                      <div class="order__head js-title">
+                        <div class="order__data">
+                          <p>
+                            Заказ №<span class="order__number">186000</span>
+                            <span class="order__date">от 19.10.2022, 14:45</span>
+                          </p>
+                        </div>
+                        <div class="order__status">
+                          <p class="order__flag _refusal">Отказ</p>
+                          <svg class="icon chevron">
+                            <use href="./assets/svg/sprite.svg#chevron"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="order__info">
+                        <div class="order__option">
+                          <div class="order__gettable">
+                            <p>Способ получения: <span>Самовывоз, магазин Попова</span></p>
+                          </div>
+                          <div class="order__phone">
+                            <p>Телефон получателя: <span>+7 (900) 000-00-00</span></p>
+                          </div>
+                        </div>
+                        <div class="order__total">
+                          <div class="order__total-sum">
+                            <p>Итого: <span>4 305,65 ₽ </span></p>
+                          </div>
+                          <div class="order__number-goods">
+                            <p>Товаров: <span>3 шт.</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order__holder js-desc">
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                            2акк*2.0а/ч (709.2.2.70)
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 6 999 ₽ </div>
+                            <div class="order__sum">6 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Набор инструмента 94 предмета AUTOVIRAZH AV-212094 1/2"1/4"DR, CrV
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 2 999 ₽ </div>
+                            <div class="order__sum">2 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Dulux Professional Bindo 3 Cтандарт краска для стен и потолков белая антиблик (База BW) 9 л
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 4 599 ₽ </div>
+                            <div class="order__sum">4 599 ₽ </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="order__actions js-modal-actions-item">
+                        <div class="order__actions-desc js-modal-actions-block">
+                          <button class="order__btn mob-menu-4">
+                            <img class="order__actions-icon" src="./assets/svg/repeatmob.svg" alt="">
+                            Повторить покупки
+                            <svg class="icon repeat">
+                              <use href="./assets/svg/sprite.svg#repeat"></use>
+                            </svg>
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/moremob.svg" alt="">
+                            Подробнее
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/cancelmob.svg" alt="">
+                            Отменить
+                          </button>
+                        </div>
+                        <div class="order__actions-mob js-btn-actions-mob">
+                          <svg class="icon other">
+                            <use href="./assets/svg/sprite.svg#other"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- отменен -->
+                    <div class="order__item js-item">
+                      <div class="order__head js-title">
+                        <div class="order__data">
+                          <p>
+                            Заказ №<span class="order__number">186000</span>
+                            <span class="order__date">от 19.10.2022, 14:45</span>
+                          </p>
+                        </div>
+                        <div class="order__status">
+                          <p class="order__flag _canceled">Отменен</p>
+                          <svg class="icon chevron">
+                            <use href="./assets/svg/sprite.svg#chevron"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="order__info">
+                        <div class="order__option">
+                          <div class="order__gettable">
+                            <p>Способ получения: <span>Самовывоз, магазин Попова</span></p>
+                          </div>
+                          <div class="order__phone">
+                            <p>Телефон получателя: <span>+7 (900) 000-00-00</span></p>
+                          </div>
+                        </div>
+                        <div class="order__total">
+                          <div class="order__total-sum">
+                            <p>Итого: <span>4 305,65 ₽ </span></p>
+                          </div>
+                          <div class="order__number-goods">
+                            <p>Товаров: <span>3 шт.</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="order__holder js-desc">
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                            2акк*2.0а/ч (709.2.2.70)
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 6 999 ₽ </div>
+                            <div class="order__sum">6 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Набор инструмента 94 предмета AUTOVIRAZH AV-212094 1/2"1/4"DR, CrV
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 2 999 ₽ </div>
+                            <div class="order__sum">2 999 ₽ </div>
+                          </div>
+                        </div>
+
+                        <div class="order__goods">
+                          <div class="order__name">
+                            Dulux Professional Bindo 3 Cтандарт краска для стен и потолков белая антиблик (База BW) 9 л
+                          </div>
+                          <div class="order__details">
+                            <div class="order__amount">1 шт. х 4 599 ₽ </div>
+                            <div class="order__sum">4 599 ₽ </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="order__actions js-modal-actions-item">
+                        <div class="order__actions-desc js-modal-actions-block">
+                          <button class="order__btn mob-menu-4">
+                            <img class="order__actions-icon" src="./assets/svg/repeatmob.svg" alt="">
+                            Повторить покупки
+                            <svg class="icon repeat">
+                              <use href="./assets/svg/sprite.svg#repeat"></use>
+                            </svg>
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/moremob.svg" alt="">
+                            Подробнее
+                          </button>
+                          <button class="order__btn">
+                            <img class="order__actions-icon" src="./assets/svg/cancelmob.svg" alt="">
+                            Отменить
+                          </button>
+                        </div>
+                        <div class="order__actions-mob js-btn-actions-mob">
+                          <svg class="icon other">
+                            <use href="./assets/svg/sprite.svg#other"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="order__pagination">
+                    <button class="order__pagination-btn">Показать еще</button>
+                    <div class="pagination">
+                      <ul class="pagination__list">
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link _back">
+                            <svg class="icon chevron">
+                              <use href="./assets/svg/sprite.svg#chevron"></use>
+                            </svg>
+                          </a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">1</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link active">2</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">3</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">...</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">32</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link _forward">
+                            <svg class="icon chevron">
+                              <use href="./assets/svg/sprite.svg#chevron"></use>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -1205,7 +1621,7 @@
   <script defer src="assets/plugins/swiper/swiper-bundle.min.js"></script>
   <script defer src="assets/plugins/pristine/pristine.min.js"></script>
 
-  <script defer src="js/index.js"></script>
+
   <script defer src="js/main.js"></script>
 </body>
 

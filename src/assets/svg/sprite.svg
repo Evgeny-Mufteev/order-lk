@@ -58,12 +58,16 @@
 <symbol id="chevron" viewBox="0 0 24 24">
   <path d="M6 15L12 9L18 15" stroke-width="2" fill="none"/>
 </symbol>
- 
+
+<symbol id="repeat" viewBox="0 0 24 25">
+  <path d="M14 15.5312L10 19.5313L14 23.5313" stroke="#898989" stroke-width="2" fill="none"/>
+  <path d="M5.93782 16.0313C5.16735 14.6968 4.85875 13.1453 5.05989 11.6176C5.26102 10.0898 5.96064 8.67111 7.05025 7.5815C8.13986 6.49189 9.55856 5.79227 11.0863 5.59114C12.6141 5.39 14.1655 5.6986 15.5 6.46907C16.8345 7.23954 17.8775 8.42882 18.4672 9.85247C19.0568 11.2761 19.1603 12.8546 18.7615 14.343C18.3627 15.8314 17.4838 17.1467 16.2613 18.0847C15.0388 19.0228 13.5409 19.5313 12 19.5312" stroke="#898989" stroke-width="2" stroke-linecap="round" fill="none"/>
+</symbol>
 
 <!-- <symbol id="" >
   
 </symbol> -->
 
-<!-- <svg class="icon chevron">
-        <use href="./assets/svg/sprite.svg#chevron"></use>
+<!-- <svg class="icon more-mob">
+        <use href="./assets/svg/sprite.svg#more-mob"></use>
     </svg> -->
