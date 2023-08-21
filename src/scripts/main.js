@@ -241,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   handleModalPopup('.js-btn-menu-modal', '.js-menu-modal');
   handleModalPopup('.js-add-card', '.js-add-new-card');
   handleModalPopup('.js-btn-block-card', '.js-block-card');
+  handleModalPopup('.js-btn-read', '.js-modal-read');
 
   // Валидация формы
   const handleFormSubmitPage = (formItem, popup) => {
@@ -499,8 +500,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   document.addEventListener('click', handleInfoHideShowBlock);
 
-  // Вызов несколих модальных окон
-  const biba = (el) => {
+  // Вызов нескольких модальных окон
+  const openMultipleModals = (el) => {
     el = el.target;
 
     if (el.closest('.order__actions-mob')) {
@@ -520,6 +521,46 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   };
+  document.addEventListener('click', openMultipleModals);
 
-  document.addEventListener('click', biba);
+  // Копирование сообщения в модальное окно
+  const copyMessageToModal = () => {
+    const blocks = document.querySelectorAll('.js-read-block');
+    const modalText = document.querySelector('.js-modal-read-text');
+    const modalDate = document.querySelector('.js-modal-read-date');
+
+    const handleClick = (event) => {
+      const block = event.currentTarget;
+      const text = block.querySelector('.js-read-text').textContent;
+      const date = block.querySelector('.js-read-date').textContent;
+
+      block.classList.add('messages__item--read');
+      modalText.textContent = text;
+      modalDate.textContent = date;
+    };
+
+    // Назначаем обработчик клика на каждый блок
+    blocks.forEach((block) => {
+      block.addEventListener('click', handleClick);
+    });
+  };
+  copyMessageToModal();
+
+  // подсчет и вывод непрочитанного количества сообщений
+  const displayUnreadMessageCount = () => {
+    const messageBlocks = document.querySelectorAll('.js-read-block:not(.messages__item--read)');
+    const quantitySpan = document.querySelector('.js-read-quantity');
+
+    quantitySpan.textContent = messageBlocks.length.toString();
+  };
+
+  displayUnreadMessageCount();
+  const observer = new MutationObserver(() => {
+    displayUnreadMessageCount();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
 });

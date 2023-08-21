@@ -37,13 +37,13 @@
               </svg>
               Мои бонусы
             </button>
-            <button class="tabs__btn content__btn mob-menu-3 is-active">
+            <button class="tabs__btn content__btn mob-menu-3">
               <svg class="badges icon order">
                 <use href="./assets/svg/sprite.svg#order"></use>
               </svg>
               Заказы с сайта
             </button>
-            <button class="tabs__btn content__btn">
+            <button class="tabs__btn content__btn is-active">
               <svg class="badges icon chat">
                 <use href="./assets/svg/sprite.svg#chat"></use>
               </svg>
@@ -992,10 +992,10 @@
             </div>
 
             <!-- Заказы с сайта -->
-            <div class="tabs__item content__item is-active">
+            <div class="tabs__item content__item">
               <div class="order">
                 <!-- Если нет заказов -->
-                <div class="order__block">
+                <div class="order__block order__block--header-block">
                   <h2 class="profile__title">Заказы с сайта <span>0</span></h2>
 
                   <div class="bonus__order-no-shopping">
@@ -1011,24 +1011,27 @@
 
                 <!-- Если есть заказы -->
                 <div class="order__block">
-                  <h2 class="profile__title">Заказы с сайта <span>5</span></h2>
-                  <div class="bonus__order-sort js-block-sort">
-                    <p>
-                      Сортировать по <span class="sort-selected js-sort-modal-btn">дате</span>:
-                      <span class="sort-item--mob">
-                        <span class="sort-item active js-bonus__order-sort">от новых к старым</span>
-                        <span class="sort-item js-bonus__order-sort">от старых к новым</span>
-                      </span>
-                    </p>
-                    <div class="sort-modal js-sort-modal">
-                      <ul class="sort-list">
-                        <li class="sort-point"><a href="javascript:void(0);"
-                            class="sort-link active js-sort-link">Дате</a></li>
-                        <li class="sort-point"><a href="javascript:void(0);" class="sort-link js-sort-link">Номеру
-                            заказа</a></li>
-                        <li class="sort-point"><a href="javascript:void(0);" class="sort-link js-sort-link">Статусу</a>
-                        </li>
-                      </ul>
+                  <div class="order__block--head">
+                    <h2 class="profile__title">Заказы с сайта <span>5</span></h2>
+                    <div class="bonus__order-sort js-block-sort">
+                      <p>
+                        Сортировать по <span class="sort-selected js-sort-modal-btn">дате</span>:
+                        <span class="sort-item--mob">
+                          <span class="sort-item active js-bonus__order-sort">от новых к старым</span>
+                          <span class="sort-item js-bonus__order-sort">от старых к новым</span>
+                        </span>
+                      </p>
+                      <div class="sort-modal js-sort-modal">
+                        <ul class="sort-list">
+                          <li class="sort-point"><a href="javascript:void(0);"
+                              class="sort-link active js-sort-link">Дате</a></li>
+                          <li class="sort-point"><a href="javascript:void(0);" class="sort-link js-sort-link">Номеру
+                              заказа</a></li>
+                          <li class="sort-point"><a href="javascript:void(0);"
+                              class="sort-link js-sort-link">Статусу</a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                   <div class="order__items">
@@ -1451,12 +1454,59 @@
             </div>
 
 
-            <div class="tabs__item content__item">
-              <p>Сообщения</p>
+            <!-- Сообщения -->
+            <div class="tabs__item content__item is-active">
+              <div class="messages">
+                <!-- Если нет сообщений -->
+                <div class="messages__block">
+                  <h2 class="profile__title">Сообщения<span>0</span></h2>
+                  <p class="messages__no-message">Сообщения не найдены</p>
+                </div>
+
+                <!-- Если сообщения есть -->
+                <div class="messages__block">
+                  <h2 class="profile__title">Сообщения<span class="js-read-quantity">3</span></h2>
+                  <div class="messages__items">
+
+                    <div class="messages__item js-btn-read js-read-block">
+                      <div class="messages__info">
+                        <div class="messages__number">434VG0044049 </div>
+                        <div class="messages__text js-read-text">Вам назначена виртуальная карта №434VG0044049,
+                          используйте Ваш
+                          №телефона для получения привилегий на кассе</div>
+                      </div>
+                      <div class="messages__date js-read-date">06.07.2022 16:26</div>
+                    </div>
+
+                    <div class="messages__item js-btn-read js-read-block">
+                      <div class="messages__info">
+                        <div class="messages__number">434VG0044050 </div>
+                        <div class="messages__text js-read-text">Вам назначена виртуальная карта №434VG0044050,
+                          используйте Ваш
+                          №телефона для получения привилегий на кассе</div>
+                      </div>
+                      <div class="messages__date js-read-date">07.07.2022 16:26</div>
+                    </div>
+
+                    <div class="messages__item js-btn-read js-read-block">
+                      <div class="messages__info">
+                        <div class="messages__number">434VG0044051 </div>
+                        <div class="messages__text js-read-text">Вам назначена виртуальная карта №434VG0044051,
+                          используйте Ваш
+                          №телефона для получения привилегий на кассе</div>
+                      </div>
+                      <div class="messages__date js-read-date">08.07.2022 16:26</div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
             </div>
+            <!-- Отзывы -->
             <div class="tabs__item content__item">
               <p>Мои отзывы</p>
             </div>
+            <!-- Заметки -->
             <div class="tabs__item content__item">
               <p>Заметки</p>
             </div>
@@ -1471,6 +1521,7 @@
   <div class="overlay"></div>
 
 
+  <!-- Попап изменения сохранены -->
   <div class="popup-saving-profile js-saving-profile">
     <div class="popup-saving-profile__inner">
       <p>Изменения сохранены</p>
@@ -1482,6 +1533,7 @@
     </button>
   </div>
 
+  <!-- Попап политика конф -->
   <div class="popup-privacy-policy js-privacy-policy">
     <div class="popup-privacy-policy__inner">
       <div class="popup-privacy-policy__title">Политика конфиденциальности</div>
@@ -1542,6 +1594,7 @@
     </button>
   </div>
 
+  <!-- Попап добавление новой карты -->
   <div class="popup-new-card js-add-new-card">
     <div class="popup-new-card__inner">
       <p class="popup-new-card__title">Зарегистрируйте дополнительную карту</p>
@@ -1598,6 +1651,7 @@
     </button>
   </div>
 
+  <!-- Попап блокировка карты -->
   <div class="popup-block-card js-block-card">
     <div class="popup-block-card__inner">
       <div class="popup-block-card__title">Вы уверены, что хотите
@@ -1612,6 +1666,20 @@
       </form>
     </div>
     <button class="popup-block-card__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Попап прочтение сообщения -->
+  <div class="popup-message-reading js-modal-read">
+    <div class="popup-message-reading__inner">
+      <p class="popup-message-reading__title">Просмотр сообщения</p>
+      <p class="popup-message-reading__text js-modal-read-text"></p>
+      <p class="popup-message-reading__data js-modal-read-date"></p>
+    </div>
+    <button class="popup-message-reading__close js-close">
       <svg class="icon close">
         <use href="./assets/svg/sprite.svg#close"></use>
       </svg>
