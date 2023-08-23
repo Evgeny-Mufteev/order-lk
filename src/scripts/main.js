@@ -213,6 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
           modal?.classList.remove('sucsess');
           overlay.classList.remove('active');
           document.body.classList.remove('no-scroll');
+          document.querySelector('.js-modal-note-text').value = '';
         });
       });
 
@@ -222,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal?.classList.remove('sucsess');
         overlay.classList.remove('active');
         document.body.classList.remove('no-scroll');
+        document.querySelector('.js-modal-note-text').value = '';
       });
 
       if (window.screen.width > 767) {
@@ -231,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('active');
             overlay.classList.remove('active');
             document.body.classList.remove('no-scroll');
+            document.querySelector('.js-modal-note-text').value = '';
           }
         });
       }
@@ -242,6 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
   handleModalPopup('.js-add-card', '.js-add-new-card');
   handleModalPopup('.js-btn-block-card', '.js-block-card');
   handleModalPopup('.js-btn-read', '.js-modal-read');
+  handleModalPopup('.js-btn-add-none', '.js-modal-note');
+  handleModalPopup('.js-btn-editing', '.js-modal-note');
 
   // Валидация формы
   const handleFormSubmitPage = (formItem, popup) => {
@@ -563,4 +568,78 @@ document.addEventListener('DOMContentLoaded', () => {
     childList: true,
     subtree: true,
   });
+
+  // отправка данных
+  const sendData = (url, data) => {
+    fetch(url, {
+      method: 'POST',
+      body: data,
+    })
+      .then((response) => {
+        console.log(response);
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .then((jsonData) => {
+        console.log(jsonData);
+        window.location.href = 'http://localhost:3000/';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // Редактирование существующей заметки и отправка формы
+  const editNote = () => {
+    const noteEditingBlocks = document.querySelectorAll('.js-note-editing');
+
+    noteEditingBlocks.forEach((noteEditingBlock) => {
+      const editButton = noteEditingBlock.querySelector('.js-btn-editing');
+      const noteText = noteEditingBlock.querySelector('.js-note-text');
+      const modalNoteText = document.querySelector('.js-modal-note-text');
+
+      editButton.addEventListener('click', (event) => {
+        const textToCopy = noteText.innerText;
+        modalNoteText.value = textToCopy;
+      });
+    });
+
+    const form = document.querySelector('.popup-add-note__form');
+    const inputText = form.querySelector('.js-modal-note-text');
+    const btnSubmit = form.querySelector('.js-modal-btn-save-note');
+
+    if (!form) {
+      return;
+    }
+
+    const pristine = new Pristine(form);
+
+    form.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      const valid = pristine.validate();
+
+      if (valid) {
+        evt.preventDefault();
+        const formData = Object.fromEntries(new FormData(evt.target).entries());
+        console.log(formData);
+        const url = form.getAttribute('action');
+        sendData(url, formData);
+      }
+    });
+
+    inputText.addEventListener('input', () => {
+      const valid = pristine.validate(inputText);
+
+      if (valid && inputText.value !== '' && inputText.value !== inputText.defaultValue) {
+        btnSubmit.disabled = false;
+      } else {
+        btnSubmit.disabled = true;
+      }
+    });
+  };
+
+  editNote();
 });

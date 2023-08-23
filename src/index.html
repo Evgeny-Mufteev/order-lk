@@ -43,7 +43,7 @@
               </svg>
               Заказы с сайта
             </button>
-            <button class="tabs__btn content__btn is-active">
+            <button class="tabs__btn content__btn">
               <svg class="badges icon chat">
                 <use href="./assets/svg/sprite.svg#chat"></use>
               </svg>
@@ -55,7 +55,7 @@
               </svg>
               Мои отзывы
             </button>
-            <button class="tabs__btn content__btn content__btn-mobile-hidden">
+            <button class="tabs__btn content__btn content__btn-mobile-hidden is-active">
               <svg class="badges icon pin">
                 <use href="./assets/svg/sprite.svg#pin"></use>
               </svg>
@@ -1455,7 +1455,7 @@
 
 
             <!-- Сообщения -->
-            <div class="tabs__item content__item is-active">
+            <div class="tabs__item content__item">
               <div class="messages">
                 <!-- Если нет сообщений -->
                 <div class="messages__block">
@@ -1507,8 +1507,92 @@
               <p>Мои отзывы</p>
             </div>
             <!-- Заметки -->
-            <div class="tabs__item content__item">
-              <p>Заметки</p>
+            <div class="tabs__item content__item is-active">
+              <div class="notes">
+                <!-- Если нет заметок -->
+                <div class="notes__block">
+                  <h2 class="profile__title">Заметки<span>0</span></h2>
+                  <p class="notes__no-notes">У вас пока нет заметок</p>
+                </div>
+                <!-- Если заметки есть -->
+                <div class="notes__block">
+                  <h2 class="profile__title">Заметки<span>3</span></h2>
+                  <div class="notes__items">
+
+                    <div class="notes__item js-note-editing">
+                      <div class="notes__text js-note-text">
+                        1Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает
+                        словесный не-текс...
+                      </div>
+                      <div class="notes__option">
+                        <div class="notes__date">06.07.2022 16:26</div>
+                        <div class="notes__actions">
+                          <button class="notes__btn js-btn-editing">
+                            <svg class="icon edit-fill">
+                              <use href="./assets/svg/sprite.svg#edit-fill"></use>
+                            </svg>
+                          </button>
+                          <button class="notes__btn">
+                            <svg class="icon delete">
+                              <use href="./assets/svg/sprite.svg#delete"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="notes__item js-note-editing">
+                      <div class="notes__text js-note-text">
+                        2Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает
+                        словесный не-текс...
+                      </div>
+                      <div class="notes__option">
+                        <div class="notes__date">06.07.2022 16:26</div>
+                        <div class="notes__actions">
+                          <button class="notes__btn js-btn-editing">
+                            <svg class="icon edit-fill">
+                              <use href="./assets/svg/sprite.svg#edit-fill"></use>
+                            </svg>
+                          </button>
+                          <button class="notes__btn">
+                            <svg class="icon delete">
+                              <use href="./assets/svg/sprite.svg#delete"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="notes__item js-note-editing">
+                      <div class="notes__text js-note-text">
+                        3Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает
+                        словесный не-текс...
+                      </div>
+                      <div class="notes__option">
+                        <div class="notes__date">06.07.2022 16:26</div>
+                        <div class="notes__actions">
+                          <button class="notes__btn js-btn-editing">
+                            <svg class="icon edit-fill">
+                              <use href="./assets/svg/sprite.svg#edit-fill"></use>
+                            </svg>
+                          </button>
+                          <button class="notes__btn">
+                            <svg class="icon delete">
+                              <use href="./assets/svg/sprite.svg#delete"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <button class="notes__add-note js-btn-add-none">Добавить заметку</button>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -1686,6 +1770,24 @@
     </button>
   </div>
 
+  <!-- Попап добавление заметки -->
+  <div class="popup-add-note js-modal-note">
+    <div class="popup-add-note__inner">
+      <p class="popup-add-note__title">Добавьте заметку</p>
+      <form class="popup-add-note__form" action="/file_name/" method="post" name="note_form" novalidate="true">
+        <div class="popup-add-note__area-wrap form-group">
+          <textarea class="popup-add-note__area form-control js-modal-note-text" name="popup_message_reading_area"
+            maxlength="3000" placeholder="Текст заметки"></textarea>
+        </div>
+        <button class="popup-add-note__btn js-modal-btn-save-note" type="submit" disabled>соханить</button>
+      </form>
+    </div>
+    <button class="popup-add-note__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
   <script defer src="assets/plugins/swiper/swiper-bundle.min.js"></script>
   <script defer src="assets/plugins/pristine/pristine.min.js"></script>
 
