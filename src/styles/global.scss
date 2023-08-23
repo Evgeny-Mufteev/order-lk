@@ -2678,6 +2678,24 @@ main {
     height: 48px;
     margin-top: 24px;
   }
+
+  &__area-wrap {
+    position: relative;
+  }
+
+  &__characters {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+
+    span {
+      color: #D9D9D9;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 153.688%;
+    }
+  }
 }
 
 /* adaptive */
@@ -3286,10 +3304,6 @@ main {
   }
 
   .content {
-
-    // &__items {
-    //   padding: 24px 16px;
-    // }
 
     &__btns {
       position: fixed;
@@ -4067,6 +4081,28 @@ main {
     &__close {
       top: 33px;
       right: 0px;
+    }
+  }
+
+  .popup-add-note {
+    width: 94%;
+    min-height: 239px;
+
+    &__inner {
+      padding: 16px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__close {
+      top: 32px;
+      right: 0;
+    }
+
+    &__area {
+      font-size: 14px;
     }
   }
 

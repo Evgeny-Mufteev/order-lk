@@ -69,6 +69,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // отправка данных
+  const sendData = (url, data) => {
+    fetch(url, {
+      method: 'POST',
+      body: data,
+    })
+      .then((response) => {
+        console.log(response);
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .then((jsonData) => {
+        console.log(jsonData);
+        window.location.href = 'http://localhost:3000/';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   // Редактирование инпутов при клике на иконки
   const enableInputEditingOnIconClick = () => {
     const arrIconEdit = document.querySelectorAll('.js-icon');
@@ -551,47 +574,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   copyMessageToModal();
 
-  // подсчет и вывод непрочитанного количества сообщений
-  const displayUnreadMessageCount = () => {
-    const messageBlocks = document.querySelectorAll('.js-read-block:not(.messages__item--read)');
-    const quantitySpan = document.querySelector('.js-read-quantity');
-
-    quantitySpan.textContent = messageBlocks.length.toString();
-  };
-
-  displayUnreadMessageCount();
-  const observer = new MutationObserver(() => {
-    displayUnreadMessageCount();
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
-
-  // отправка данных
-  const sendData = (url, data) => {
-    fetch(url, {
-      method: 'POST',
-      body: data,
-    })
-      .then((response) => {
-        console.log(response);
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      })
-      .then((jsonData) => {
-        console.log(jsonData);
-        window.location.href = 'http://localhost:3000/';
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   // Редактирование существующей заметки и отправка формы
   const editNote = () => {
     const noteEditingBlocks = document.querySelectorAll('.js-note-editing');
@@ -642,4 +624,82 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   editNote();
+
+  // Подсчет количества символов в попапе добавлнеие заметки
+  const countCharacters = (el) => {
+    el = el.target;
+    const inputElement = document.querySelector('.js-modal-note-text');
+    const spanElement = document.querySelector('.popup-add-note__characters span');
+    const MAX_CHARACTERS = 3000;
+
+    if (!inputElement && !spanElement) return;
+
+    const updateCharacterCount = () => {
+      let { value } = inputElement;
+      if (value.length > MAX_CHARACTERS) {
+        value = value.slice(0, MAX_CHARACTERS);
+      }
+      spanElement.textContent = value.length;
+    };
+
+    inputElement.addEventListener('input', updateCharacterCount);
+
+    if (el.closest('.js-btn-add-none')) {
+      spanElement.textContent = 0;
+      inputElement.value = '';
+    }
+
+    if (el.closest('.js-btn-editing')) {
+      updateCharacterCount();
+    }
+  };
+  document.addEventListener('click', countCharacters);
+
+  // Удаление заметки
+  const deleteNote = (el) => {
+    el = el.target;
+
+    if (el.closest('.js-btn-notes-delete')) {
+      el.closest('.js-note-editing').remove();
+    }
+  };
+  document.addEventListener('click', deleteNote);
+
+  // подсчет и вывод непрочитанного количества сообщений и заметок
+  // const displayUnreadMessageCount = (el) => {
+  //   el = el.target;
+  //   const spanElement = document.querySelector('.js-read-quantity');
+  //   const arrBlocks = document.querySelectorAll('.js-note-editing');
+
+  //   if (el.closest('.js-btn-notes-delete')) {
+  //     const a = (spanElement.textContent = arrBlocks.length).toString();
+
+  //     el.closest('.profile__title').querySelector('.js-read-quantity').textContent = a;
+  //   }
+  // };
+  // document.addEventListener('click', displayUnreadMessageCount);
 });
+
+// const displayUnreadMessageCount = (blockSelector, spanSelector) => {
+//   const updateUnreadCount = () => {
+//     const messageBlocks = document.querySelectorAll(blockSelector);
+//     const quantitySpan = document.querySelector(spanSelector);
+
+//     if (quantitySpan) {
+//       quantitySpan.textContent = messageBlocks.length.toString();
+//     }
+//   };
+//   updateUnreadCount();
+
+//   const handleDomChange = () => {
+//     updateUnreadCount();
+//   };
+
+//   const observer = new MutationObserver(handleDomChange);
+
+//   observer.observe(document.body, {
+//     childList: true,
+//     subtree: true,
+//   });
+// };
+// displayUnreadMessageCount('.js-read-block:not(.messages__item--read)', '.js-read-quantity');
