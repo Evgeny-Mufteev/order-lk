@@ -2,3 +2,4 @@
 dist
 tsconfig.json
 ftp_settings.json
+/.idea
