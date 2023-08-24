@@ -47,6 +47,16 @@
   transition: var(--base-transition);
 }
 
+.icon.rating {
+  width: 17px;
+  height: 17px;
+  fill: #9B9B9B;
+
+  &.active {
+    fill: #FFD159;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .badges {
     margin-right: 0;

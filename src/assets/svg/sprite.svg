@@ -69,6 +69,11 @@
   <path d="M10.0681 4.32469C10.1821 4.21838 10.4332 4.12443 10.7825 4.05742C11.1318 3.99042 11.5597 3.9541 12 3.9541C12.4403 3.9541 12.8682 3.99042 13.2175 4.05742C13.5668 4.12443 13.8179 4.21838 13.9319 4.32469" stroke="#898989" stroke-width="2" stroke-linecap="round" fill="none"/>
 </symbol>
 
-<!-- <svg class="icon delete">
-        <use href="./assets/svg/sprite.svg#delete"></use>
+<symbol id="rating" viewBox="0 0 17 16">
+  <path d="M8.5 0.454102L10.7133 5.90775L16.584 6.32746L12.0812 10.1177L13.4962 15.8307L8.5 12.7196L3.50383 15.8307L4.9188 10.1177L0.416019 6.32746L6.28669 5.90775L8.5 0.454102Z"/>
+</symbol>
+
+
+<!-- <svg class="icon rating">
+        <use href="./assets/svg/sprite.svg#rating"></use>
     </svg> -->

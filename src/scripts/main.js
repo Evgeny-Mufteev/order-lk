@@ -664,21 +664,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   document.addEventListener('click', deleteNote);
-
-  // подсчет и вывод непрочитанного количества сообщений и заметок
-  // const displayUnreadMessageCount = (el) => {
-  //   el = el.target;
-  //   const spanElement = document.querySelector('.js-read-quantity');
-  //   const arrBlocks = document.querySelectorAll('.js-note-editing');
-
-  //   if (el.closest('.js-btn-notes-delete')) {
-  //     const a = (spanElement.textContent = arrBlocks.length).toString();
-
-  //     el.closest('.profile__title').querySelector('.js-read-quantity').textContent = a;
-  //   }
-  // };
-  // document.addEventListener('click', displayUnreadMessageCount);
 });
+
+// подсчет и вывод непрочитанного количества сообщений и заметок
+// const displayUnreadMessageCount = (el) => {
+//   el = el.target;
+//   const spanElement = document.querySelector('.js-read-quantity');
+//   const arrBlocks = document.querySelectorAll('.js-note-editing');
+
+//   if (el.closest('.js-btn-notes-delete')) {
+//     const a = (spanElement.textContent = arrBlocks.length).toString();
+
+//     el.closest('.profile__title').querySelector('.js-read-quantity').textContent = a;
+//   }
+// };
+// document.addEventListener('click', displayUnreadMessageCount);
 
 // const displayUnreadMessageCount = (blockSelector, spanSelector) => {
 //   const updateUnreadCount = () => {

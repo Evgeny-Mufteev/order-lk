@@ -2122,6 +2122,154 @@ main {
   }
 }
 
+.reviews {
+  &__block {
+    padding: 36px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 2px 2px 2px 0px rgba(215, 215, 215, 0.25);
+
+    &:last-child {
+      margin-top: 12px;
+    }
+  }
+
+  .profile__title {
+    position: relative;
+    display: inline;
+
+    span {
+      color: #353535;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      background: #F0F0F0;
+      position: absolute;
+      top: -5px;
+      right: -30px;
+    }
+  }
+
+  &__no-no-reviews {
+    font-family: RobotoMedium;
+    color: #353535;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 32px;
+  }
+
+  &__rating-list {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &__rating-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__grade {
+    margin-left: 8px;
+    color: #353535;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 149.188%;
+  }
+
+  &__flag {
+    color: var(--basic-100, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px;
+    border-radius: 4px;
+    padding: 5px 10px;
+    display: inline;
+
+    &._moderation {
+      background: #1194CC;
+    }
+
+    &._published {
+      background: #0AB01B;
+    }
+
+    &._removed {
+      background: #CB1E23;
+    }
+  }
+
+  &__status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 0 12px;
+  }
+
+  &__title {
+    color: var(--gray-1, #333);
+    font-size: 16px;
+    font-family: RobotoMedium;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 149.188%;
+    max-width: 507px;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    color: var(--gray-1, #333);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 153.688%;
+    margin-bottom: 16px;
+  }
+
+  &__date {
+    color: #898989;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__delete {
+    border: none;
+    outline: none;
+    background: transparent;
+    max-height: 24px;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__item {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ECECEC;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+}
+
 .popup-saving-profile {
   display: none;
   width: 453px;

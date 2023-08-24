@@ -49,13 +49,13 @@
               </svg>
               Сообщения
             </button>
-            <button class="tabs__btn content__btn content__btn-mobile-hidden">
+            <button class="tabs__btn content__btn content__btn-mobile-hidden is-active">
               <svg class="badges icon book">
                 <use href="./assets/svg/sprite.svg#book"></use>
               </svg>
               Мои отзывы
             </button>
-            <button class="tabs__btn content__btn content__btn-mobile-hidden is-active">
+            <button class="tabs__btn content__btn content__btn-mobile-hidden">
               <svg class="badges icon pin">
                 <use href="./assets/svg/sprite.svg#pin"></use>
               </svg>
@@ -1503,17 +1503,238 @@
               </div>
             </div>
             <!-- Отзывы -->
-            <div class="tabs__item content__item">
-              <p>Мои отзывы</p>
+            <div class="tabs__item content__item is-active">
+              <div class="reviews">
+                <!-- Если нет отзывов -->
+                <div class="reviews__block">
+                  <h2 class="profile__title">Мои отзывы<span>0</span></h2>
+                  <p class="notes__no-reviews">Отзывы не найдены</p>
+                </div>
+
+                <div class="reviews__block">
+                  <h2 class="profile__title">Мои отзывы<span>12</span></h2>
+                  <div class="reviews__items">
+                    <div class="reviews__item">
+                      <div class="reviews__status">
+                        <div class="reviews__rating">
+                          <div class="reviews__rating-inner">
+                            <ul class="reviews__rating-list">
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                            </ul>
+                            <span class="reviews__grade">5</span>
+                          </div>
+                        </div>
+                        <div class="reviews__state">
+                          <p class="reviews__flag _moderation">На модерации</p>
+                        </div>
+                      </div>
+                      <div class="reviews__title">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч
+                        (709.2.2.70)
+                      </div>
+                      <div class="reviews__text">
+                        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует
+                        замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текс
+                      </div>
+                      <div class="reviews__action">
+                        <div class="reviews__date">06.07.2022 16:26</div>
+                        <button class="reviews__delete">
+                          <svg class="icon delete">
+                            <use href="./assets/svg/sprite.svg#delete"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="reviews__item">
+                      <div class="reviews__status">
+                        <div class="reviews__rating">
+                          <div class="reviews__rating-inner">
+                            <ul class="reviews__rating-list">
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                            </ul>
+                            <span class="reviews__grade">4</span>
+                          </div>
+                        </div>
+                        <div class="reviews__state">
+                          <p class="reviews__flag _published">Опубликован</p>
+                        </div>
+                      </div>
+                      <div class="reviews__title">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч
+                        (709.2.2.70)
+                      </div>
+                      <div class="reviews__text">
+                        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует
+                        замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текс
+                      </div>
+                      <div class="reviews__action">
+                        <div class="reviews__date">06.07.2022 16:26</div>
+                        <button class="reviews__delete">
+                          <svg class="icon delete">
+                            <use href="./assets/svg/sprite.svg#delete"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="reviews__item">
+                      <div class="reviews__status">
+                        <div class="reviews__rating">
+                          <div class="reviews__rating-inner">
+                            <ul class="reviews__rating-list">
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                            </ul>
+                            <span class="reviews__grade">4</span>
+                          </div>
+                        </div>
+                        <div class="reviews__state">
+                          <p class="reviews__flag _removed">Удален</p>
+                        </div>
+                      </div>
+                      <div class="reviews__title">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч
+                        (709.2.2.70)
+                      </div>
+                      <div class="reviews__text">
+                        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует
+                        замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текс
+                      </div>
+                      <div class="reviews__action">
+                        <div class="reviews__date">06.07.2022 16:26</div>
+                        <button class="reviews__delete">
+                          <svg class="icon delete">
+                            <use href="./assets/svg/sprite.svg#delete"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__pagination">
+                    <button class="order__pagination-btn">Показать еще</button>
+                    <div class="pagination">
+                      <ul class="pagination__list">
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link _back">
+                            <svg class="icon chevron">
+                              <use href="./assets/svg/sprite.svg#chevron"></use>
+                            </svg>
+                          </a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">1</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link active">2</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">3</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">...</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link">32</a>
+                        </li>
+                        <li class="pagination__item">
+                          <a href="javascript:void(0);" class="pagination__link _forward">
+                            <svg class="icon chevron">
+                              <use href="./assets/svg/sprite.svg#chevron"></use>
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- Заметки -->
-            <div class="tabs__item content__item is-active">
+            <div class="tabs__item content__item">
               <div class="notes">
                 <!-- Если нет заметок -->
-                <!-- <div class="notes__block">
+                <div class="notes__block">
                   <h2 class="profile__title">Заметки<span>0</span></h2>
                   <p class="notes__no-notes">У вас пока нет заметок</p>
-                </div> -->
+                </div>
                 <!-- Если заметки есть -->
                 <div class="notes__block">
                   <h2 class="profile__title">Заметки<span class="js-read-quantity">3</span></h2>
