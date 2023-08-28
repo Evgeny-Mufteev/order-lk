@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btns.forEach((btnItem) => {
         btnItem.addEventListener('click', (evt) => {
           evt.preventDefault();
+          evt.stopPropagation();
           modal.classList.add('active');
           overlay.classList.add('active');
           document.body.classList.add('no-scroll');
@@ -232,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
       arrCloseButton.forEach((closeButton) => {
         closeButton.addEventListener('click', (evt) => {
           evt.preventDefault();
+          evt.stopPropagation();
           modal.classList.remove('active');
           modal?.classList.remove('sucsess');
           overlay.classList.remove('active');
@@ -242,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       overlay.addEventListener('click', (evt) => {
         evt.preventDefault();
+        evt.stopPropagation();
         modal.classList.remove('active');
         modal?.classList.remove('sucsess');
         overlay.classList.remove('active');
@@ -253,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', (evt) => {
           if (evt.key === 'Escape') {
             evt.preventDefault();
+            evt.stopPropagation();
             modal.classList.remove('active');
             overlay.classList.remove('active');
             document.body.classList.remove('no-scroll');
@@ -270,6 +274,8 @@ document.addEventListener('DOMContentLoaded', () => {
   handleModalPopup('.js-btn-read', '.js-modal-read');
   handleModalPopup('.js-btn-add-none', '.js-modal-note');
   handleModalPopup('.js-btn-editing', '.js-modal-note');
+  handleModalPopup('.js-btn-del-reviews', '.js-delete-review');
+  handleModalPopup('.js-reviews-item', '.js-view-review');
 
   // Валидация формы
   const handleFormSubmitPage = (formItem, popup) => {
@@ -306,7 +312,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('no-scroll');
 
         const formData = Object.fromEntries(new FormData(evt.target).entries());
-        formData.phone_number = formData.phone_number.replace(/\D/g, '');
+        if (formData.phone_number) {
+          formData.phone_number = formData.phone_number.replace(/\D/g, '');
+        }
 
         console.log(formData);
         // evt.target.submit();
@@ -410,15 +418,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Передатать id выбранной карты для блокировки
+  // или отзыва для удаления
   const lockSelectedCard = (el) => {
     el = el.target;
     if (el.closest('.js-bonus-card-item')) {
       document.querySelector('.js-select-blocked-card').value =
         el.closest('.js-bonus-card-item').id;
     }
+    if (el.closest('.js-reviews-item')) {
+      document.querySelector('.js-select-delete-review').value = el.closest('.js-reviews-item').id;
+    }
   };
-  const blockForm = document.querySelector('.bonus__inner');
-  blockForm.addEventListener('click', lockSelectedCard);
+  const blockFormCard = document.querySelector('.bonus__inner');
+  const blockFormReview = document.querySelector('.reviews__items');
+  blockFormCard.addEventListener('click', lockSelectedCard);
+  blockFormReview.addEventListener('click', lockSelectedCard);
 
   // Блокировака карты
   const blockMap = () => {
@@ -664,6 +678,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
   document.addEventListener('click', deleteNote);
+
+  // Запрос на удаление отзыва
+  const requestDeleteReview = () => {
+    const form = document.querySelector('.popup-delete-review__form');
+    const modalBlock = document.querySelector('.js-delete-review');
+
+    if (!form) {
+      return;
+    }
+
+    const pristine = new Pristine(form);
+
+    form.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      const valid = pristine.validate();
+
+      if (valid) {
+        evt.preventDefault();
+        modalBlock?.classList.add('success');
+        const formData = Object.fromEntries(new FormData(evt.target).entries());
+
+        console.log(formData);
+        setTimeout(() => {
+          const url = form.getAttribute('action');
+          sendData(url, formData);
+        }, 3000);
+      }
+    });
+  };
+  requestDeleteReview();
 });
 
 // подсчет и вывод непрочитанного количества сообщений и заметок

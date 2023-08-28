@@ -1453,7 +1453,6 @@
               </div>
             </div>
 
-
             <!-- Сообщения -->
             <div class="tabs__item content__item">
               <div class="messages">
@@ -1508,13 +1507,15 @@
                 <!-- Если нет отзывов -->
                 <div class="reviews__block">
                   <h2 class="profile__title">Мои отзывы<span>0</span></h2>
-                  <p class="notes__no-reviews">Отзывы не найдены</p>
+                  <p class="reviews__no-reviews">Отзывы не найдены</p>
                 </div>
 
                 <div class="reviews__block">
                   <h2 class="profile__title">Мои отзывы<span>12</span></h2>
                   <div class="reviews__items">
-                    <div class="reviews__item">
+
+                    <!-- Статус на модерации -->
+                    <div class="reviews__item _status-moderation js-reviews-item" id="1">
                       <div class="reviews__status">
                         <div class="reviews__rating">
                           <div class="reviews__rating-inner">
@@ -1564,7 +1565,7 @@
                       </div>
                       <div class="reviews__action">
                         <div class="reviews__date">06.07.2022 16:26</div>
-                        <button class="reviews__delete">
+                        <button class="reviews__delete js-btn-del-reviews">
                           <svg class="icon delete">
                             <use href="./assets/svg/sprite.svg#delete"></use>
                           </svg>
@@ -1572,7 +1573,8 @@
                       </div>
                     </div>
 
-                    <div class="reviews__item">
+                    <!-- Статус опубликован -->
+                    <div class="reviews__item _status-published js-reviews-item" id="2">
                       <div class="reviews__status">
                         <div class="reviews__rating">
                           <div class="reviews__rating-inner">
@@ -1622,7 +1624,7 @@
                       </div>
                       <div class="reviews__action">
                         <div class="reviews__date">06.07.2022 16:26</div>
-                        <button class="reviews__delete">
+                        <button class="reviews__delete js-btn-del-reviews">
                           <svg class="icon delete">
                             <use href="./assets/svg/sprite.svg#delete"></use>
                           </svg>
@@ -1630,7 +1632,8 @@
                       </div>
                     </div>
 
-                    <div class="reviews__item">
+                    <!-- Статус удален -->
+                    <div class="reviews__item _status-deleted js-reviews-item" id="3">
                       <div class="reviews__status">
                         <div class="reviews__rating">
                           <div class="reviews__rating-inner">
@@ -1680,14 +1683,193 @@
                       </div>
                       <div class="reviews__action">
                         <div class="reviews__date">06.07.2022 16:26</div>
-                        <button class="reviews__delete">
+                        <button class="reviews__delete js-btn-del-reviews">
                           <svg class="icon delete">
                             <use href="./assets/svg/sprite.svg#delete"></use>
                           </svg>
                         </button>
                       </div>
                     </div>
+
+                    <!-- Статус на модерации -->
+                    <div class="reviews__item _status-moderation js-reviews-item" id="4">
+                      <div class="reviews__status">
+                        <div class="reviews__rating">
+                          <div class="reviews__rating-inner">
+                            <ul class="reviews__rating-list">
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                            </ul>
+                            <span class="reviews__grade">5</span>
+                          </div>
+                        </div>
+                        <div class="reviews__state">
+                          <p class="reviews__flag _moderation">На модерации</p>
+                        </div>
+                      </div>
+                      <div class="reviews__title">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч
+                        (709.2.2.70)
+                      </div>
+                      <div class="reviews__text">
+                        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует
+                        замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текс
+                      </div>
+                      <div class="reviews__action">
+                        <div class="reviews__date">06.07.2022 16:26</div>
+                        <button class="reviews__delete js-btn-del-reviews">
+                          <svg class="icon delete">
+                            <use href="./assets/svg/sprite.svg#delete"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Статус опубликован -->
+                    <div class="reviews__item _status-published js-reviews-item" id="5">
+                      <div class="reviews__status">
+                        <div class="reviews__rating">
+                          <div class="reviews__rating-inner">
+                            <ul class="reviews__rating-list">
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                            </ul>
+                            <span class="reviews__grade">4</span>
+                          </div>
+                        </div>
+                        <div class="reviews__state">
+                          <p class="reviews__flag _published">Опубликован</p>
+                        </div>
+                      </div>
+                      <div class="reviews__title">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч
+                        (709.2.2.70)
+                      </div>
+                      <div class="reviews__text">
+                        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует
+                        замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текс
+                      </div>
+                      <div class="reviews__action">
+                        <div class="reviews__date">06.07.2022 16:26</div>
+                        <button class="reviews__delete js-btn-del-reviews">
+                          <svg class="icon delete">
+                            <use href="./assets/svg/sprite.svg#delete"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Статус удален -->
+                    <div class="reviews__item _status-deleted js-reviews-item" id="6">
+                      <div class="reviews__status">
+                        <div class="reviews__rating">
+                          <div class="reviews__rating-inner">
+                            <ul class="reviews__rating-list">
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating active">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                              <li class="reviews__rating-item">
+                                <svg class="icon rating">
+                                  <use href="./assets/svg/sprite.svg#rating"></use>
+                                </svg>
+                              </li>
+                            </ul>
+                            <span class="reviews__grade">4</span>
+                          </div>
+                        </div>
+                        <div class="reviews__state">
+                          <p class="reviews__flag _removed">Удален</p>
+                        </div>
+                      </div>
+                      <div class="reviews__title">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч
+                        (709.2.2.70)
+                      </div>
+                      <div class="reviews__text">
+                        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент
+                        аннигилирует
+                        замысел. Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текс
+                      </div>
+                      <div class="reviews__action">
+                        <div class="reviews__date">06.07.2022 16:26</div>
+                        <button class="reviews__delete js-btn-del-reviews">
+                          <svg class="icon delete">
+                            <use href="./assets/svg/sprite.svg#delete"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+
                   </div>
+
                   <div class="reviews__pagination">
                     <button class="order__pagination-btn">Показать еще</button>
                     <div class="pagination">
@@ -1724,6 +1906,7 @@
                       </ul>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -1961,7 +2144,7 @@
     <div class="popup-block-card__inner">
       <div class="popup-block-card__title">Вы уверены, что хотите
         заблокировать карту?</div>
-      <form class="popup-block-card__form" method="post">
+      <form class="popup-block-card__form" method="post" name="popup_block_card_form">
         <div class="popup-block-card__box">
           <button class="popup-block-card__btn popup-block-card__btn--white js-btn-blocked js-close"
             type="submit">да</button>
@@ -2010,6 +2193,139 @@
       </svg>
     </button>
   </div>
+
+  <!-- Попап удаления отзыва -->
+  <div class="popup-delete-review js-delete-review">
+
+    <div class="popup-delete-review__inner">
+      <div class="popup-delete-review__holder">
+        <p class="popup-delete-review__title">Вы уверены, что хотите удалить отзыв?</p>
+        <form class="popup-delete-review__form" action="/file_name/" method="post" name="popup_delete_review_form"
+          novalidate="true">
+          <div class="popup-delete-review__box form-group">
+            <button class="popup-delete-review__btn popup-delete-review__btn--white form-control"
+              type="submit">да</button>
+            <button class="popup-delete-review__btn popup-delete-review__btn--green form-control js-close">нет</button>
+          </div>
+          <input type="hidden" class="js-select-delete-review form-control" name="select_delete_review">
+        </form>
+      </div>
+
+      <div class="popup-delete-review__succes">
+        <p class="popup-delete-review__title">Удаление отзыва</p>
+        <div class="popup-delete-review__info">
+          <p class="popup-delete-review__text">Ваш запрос на удаление отзыва направлен администратору сайта.</p>
+          <p class="popup-delete-review__text">Спасибо.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="popup-delete-review__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+
+  </div>
+  <!-- Попап просмотра отзыва -->
+  <div class="popup-view-review js-view-review">
+    <div class="popup-view-review__inner">
+      <p class="popup-delete-review__title">Просмотр отзыва</p>
+      <div class="popup-view-review__status">
+        <div class="reviews__rating">
+          <div class="reviews__rating-inner">
+            <ul class="reviews__rating-list">
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+            </ul>
+            <span class="reviews__grade">5</span>
+          </div>
+        </div>
+        <div class="reviews__state">
+          <p class="reviews__flag _moderation">На модерации</p>
+        </div>
+      </div>
+      <div class="popup-view-review__heading">
+        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+        2акк*2.0а/ч (709.2.2.70)
+      </div>
+      <div class="popup-view-review__text">
+        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент аннигилирует замысел.
+        Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текст. Декодирование приводит
+        экзистенциальный не-текст. Драма интегрирует деструктивный эпитет.
+      </div>
+      <div class="popup-view-review__features">
+        <div class="popup-view-review__block">
+          <p class="popup-view-review__subtitle">Плюсы:</p>
+          <ul class="popup-view-review__list">
+            <li class="popup-view-review__item">качественная сборка</li>
+            <li class="popup-view-review__item">отличная цена</li>
+            <li class="popup-view-review__item">пользуюсь уже 5 лет</li>
+          </ul>
+        </div>
+        <div class="popup-view-review__block">
+          <p class="popup-view-review__subtitle">Минусы:</p>
+          <ul class="popup-view-review__list">
+            <li class="popup-view-review__item">не нашел</li>
+          </ul>
+        </div>
+        <div class="popup-view-review__block">
+          <p class="popup-view-review__subtitle">Покупал для:</p>
+          <ul class="popup-view-review__list">
+            <li class="popup-view-review__item">не указано</li>
+          </ul>
+        </div>
+      </div>
+      <div class="popup-view-review__action">
+        <div class="popup-view-review__date">06.07.2022 16:26</div>
+        <div class="popup-view-review__feedback">
+          <div class="popup-view-review__feedback-btn _like">
+            <svg class="icon feedback">
+              <use href="./assets/svg/sprite.svg#feedback"></use>
+            </svg>
+            <span>0</span>
+          </div>
+          <div class="popup-view-review__feedback-btn _dislike">
+            <svg class="icon feedback">
+              <use href="./assets/svg/sprite.svg#feedback"></use>
+            </svg>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="popup-view-review__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+
+
 
   <script defer src="assets/plugins/swiper/swiper-bundle.min.js"></script>
   <script defer src="assets/plugins/pristine/pristine.min.js"></script>
