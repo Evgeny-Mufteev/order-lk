@@ -2235,6 +2235,11 @@ main {
     font-weight: 400;
     line-height: 153.688%;
     margin-bottom: 16px;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: anywhere;
   }
 
   &__date {
@@ -3590,6 +3595,33 @@ main {
     }
   }
 
+  .reviews {
+
+    .profile__title {
+      span {
+        top: 0px;
+      }
+    }
+
+    &__title {
+      font-size: 14px;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__block {
+      padding: 24px;
+    }
+
+    &__status {
+      &:not(:first-child) {
+        margin-top: 16px;
+      }
+    }
+  }
+
   .popup-saving-profile {
     width: 499px;
 
@@ -4335,6 +4367,40 @@ main {
 
   }
 
+  .reviews {
+
+    &__status {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      row-gap: 8px;
+      margin: 0px 0 12px;
+    }
+
+    &__flag {
+      display: block;
+    }
+
+    &__grade {
+      font-size: 14px;
+    }
+
+    &__text {
+      -webkit-line-clamp: 6;
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      row-gap: 24px;
+    }
+
+    &__item {
+      &:first-child {
+        margin-top: 16px;
+      }
+    }
+  }
+
   .popup-saving-profile {
     width: 288px;
     height: 88px;
@@ -4521,6 +4587,72 @@ main {
 
     &__area {
       font-size: 14px;
+    }
+  }
+
+  .popup-delete-review {
+    width: 288px;
+    height: 166px;
+
+    &__inner {
+      padding: 16px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__close {
+      top: 25px;
+      right: 0px;
+    }
+
+    &__box {
+      margin-top: 40px;
+    }
+  }
+
+  .popup-view-review {
+    width: 288px;
+
+    &__inner {
+      padding: 16px;
+    }
+
+    .reviews__state {
+      display: none;
+    }
+
+    &__heading {
+      font-size: 14px;
+      margin-bottom: 8px;
+      text-decoration-line: none;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
+
+    &__item {
+      font-size: 14px;
+      margin-bottom: 1px;
+    }
+
+    &__list {
+      padding-left: 23px;
+    }
+
+    &__action {
+      margin-top: 16px;
+    }
+
+    &__close {
+      top: 30px;
+      right: 0px;
     }
   }
 
