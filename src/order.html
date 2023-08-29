@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Главная</title>
+  <meta name="description" content="order-lk">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="assets/plugins/swiper/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/sprite.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    @@include('_include/header.html')
+    @@include('_include/breadcrumb.html')
+    <main>
+      <div class="container">
+        <h1 class="page-title">Личный кабинет</h1>
+        <div class="tabs content">
+          <div class="tabs__btns content__btns">
+
+            <button class="tabs__btn content__btn mob-menu-1">
+              <svg class="badges icon user">
+                <use href="./assets/svg/sprite.svg#user"></use>
+              </svg>
+              Мой профиль
+            </button>
+            <button class="tabs__btn content__btn mob-menu-2">
+              <svg class="badges icon fire">
+                <use href="./assets/svg/sprite.svg#fire"></use>
+              </svg>
+              Мои бонусы
+            </button>
+            <button class="tabs__btn content__btn mob-menu-3 is-active">
+              <svg class="badges icon order">
+                <use href="./assets/svg/sprite.svg#order"></use>
+              </svg>
+              Заказы с сайта
+            </button>
+            <button class="tabs__btn content__btn">
+              <svg class="badges icon chat">
+                <use href="./assets/svg/sprite.svg#chat"></use>
+              </svg>
+              Сообщения
+            </button>
+            <button class="tabs__btn content__btn content__btn-mobile-hidden">
+              <svg class="badges icon book">
+                <use href="./assets/svg/sprite.svg#book"></use>
+              </svg>
+              Мои отзывы
+            </button>
+            <button class="tabs__btn content__btn content__btn-mobile-hidden">
+              <svg class="badges icon pin">
+                <use href="./assets/svg/sprite.svg#pin"></use>
+              </svg>
+              Заметки
+            </button>
+
+            <button class="content__btn content__btn--mobile js-btn-menu-modal">
+              <svg class="badges-mobile icon other">
+                <use href="./assets/svg/sprite.svg#other"></use>
+              </svg>
+              другое
+            </button>
+
+            <div class="content__btns-modal js-menu-modal">
+
+              <button class="content__btn js-menu-mob-reviews">
+                <svg class="badges icon book">
+                  <use href="./assets/svg/sprite.svg#book"></use>
+                </svg>
+                Мои отзывы
+              </button>
+
+              <button class="content__btn js-menu-mob-pin">
+                <svg class="badges icon pin">
+                  <use href="./assets/svg/sprite.svg#pin"></use>
+                </svg>
+                Заметки
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="tabs__items content__items">
+            <!-- Профиль -->
+            <div class="tabs__item content__item">
+            </div>
+
+            <!-- Бонусы -->
+            <div class="tabs__item content__item">
+            </div>
+
+            <!-- Заказы с сайта -->
+            <div class="tabs__item content__item is-active">
+              <div class="make">
+                <a class="make__link" href="javascript:void(0);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path
+                      d="M4 12.0059L3.29289 11.2988L2.58579 12.0059L3.29289 12.713L4 12.0059ZM19 13.0059C19.5523 13.0059 20 12.5581 20 12.0059C20 11.4536 19.5523 11.0059 19 11.0059V13.0059ZM9.29289 5.29875L3.29289 11.2988L4.70711 12.713L10.7071 6.71297L9.29289 5.29875ZM3.29289 12.713L9.29289 18.713L10.7071 17.2988L4.70711 11.2988L3.29289 12.713ZM4 13.0059H19V11.0059H4V13.0059Z"
+                      fill="#898989" />
+                  </svg>
+                  В список заказов
+                </a>
+                <div class="make__info">
+                  <div class="make__title">
+                    <span class="make__order">Заказ №186000</span>
+                    <span class="make__data">от 19.10.2022, 14:45</span>
+                    <span class="make__flag _fulfilled">Исполнен</span>
+                  </div>
+                  <div class="make__items">
+                    <div class="make__item">
+                      <p class="make__features">Номер карты:</p>
+                      <p class="make__benefits">434VG0044049</p>
+                    </div>
+                    <div class="make__item">
+                      <p class="make__features">ФИО:</p>
+                      <p class="make__benefits">Иван Иванов</p>
+                    </div>
+                    <div class="make__item">
+                      <p class="make__features">Номер телефона:</p>
+                      <p class="make__benefits">+7 (900) 000-00-00</p>
+                    </div>
+                    <div class="make__item">
+                      <p class="make__features">Способ доставки:</p>
+                      <p class="make__benefits">Самовывоз, Магазин Попова</p>
+                    </div>
+                    <div class="make__item">
+                      <p class="make__features">Дата получения:</p>
+                      <p class="make__benefits">12.10.2022</p>
+                    </div>
+                    <div class="make__item">
+                      <p class="make__features">Дата создания заказа:</p>
+                      <p class="make__benefits">10.10.2022</p>
+                    </div>
+                    <div class="make__item">
+                      <p class="make__features">Примечание:</p>
+                      <p class="make__benefits">-</p>
+                    </div>
+                    <div class="make__item">
+                      <p class="make__features">Бонус:</p>
+                      <p class="make__benefits">+320 бонусов на счет</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="make__goods">
+                  <h2 class="profile__title">Товары в заказе<span>3</span></h2>
+                  <div class="make__products">
+                    <div class="make__product">
+                      <div class="make__name">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч (709.2.2.70)
+                      </div>
+                      <div class="make__details">
+                        <div class="make__amount">1 шт. х 6 999 ₽ </div>
+                        <div class="make__sum">6 999 ₽ </div>
+                      </div>
+                    </div>
+                    <div class="make__product">
+                      <div class="make__name">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч (709.2.2.70)
+                      </div>
+                      <div class="make__details">
+                        <div class="make__amount">1 шт. х 6 999 ₽ </div>
+                        <div class="make__sum">6 999 ₽ </div>
+                      </div>
+                    </div>
+                    <div class="make__product">
+                      <div class="make__name">
+                        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+                        2акк*2.0а/ч (709.2.2.70)
+                      </div>
+                      <div class="make__details">
+                        <div class="make__amount">1 шт. х 6 999 ₽ </div>
+                        <div class="make__sum">6 999 ₽ </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="make__final">
+                    <p>Сумма за товары: <span>14 597 ₽</span></p>
+                    <p>Сумма к оплате: <span> 14 597 ₽</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Сообщения -->
+            <div class="tabs__item content__item">
+            </div>
+            <!-- Отзывы -->
+            <div class="tabs__item content__item">
+            </div>
+            <!-- Заметки -->
+            <div class="tabs__item content__item">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+    @@include('_include/footer.html')
+  </div>
+
+
+  <div class="overlay"></div>
+
+  <!-- Попап изменения сохранены -->
+  <div class="popup-saving-profile js-saving-profile">
+    <div class="popup-saving-profile__inner">
+      <p>Изменения сохранены</p>
+    </div>
+    <button class="popup-saving-profile__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Попап политика конф -->
+  <div class="popup-privacy-policy js-privacy-policy">
+    <div class="popup-privacy-policy__inner">
+      <div class="popup-privacy-policy__title">Политика конфиденциальности</div>
+      <div class="popup-privacy-policy__content">
+        <div class="popup-privacy-policy__desc">
+          Настоящая Политика в отношении обработки персональных данных клиента и сведения
+          о реализуемых требованиях к защите персональных данных (далее - Политика конфиденциальности) действует в
+          отношении всей информации, которую интернет-магазин Ордер, расположенный на доменном имени
+          https://order-nn.ru,
+          может получить о Пользователе во время использования данного сайта.
+        </div>
+        <h3 class="popup-privacy-policy__subtitle">1.Общие положения</h3>
+        <p>
+          1.1. Настоящий документ определяет Политику конфиденциальности и предусматривает методы обработки персональных
+          данных интернет-магазином Ордер конфиденциальной информации клиентов, посещающих сайт www.order-nn.ru.
+        </p>
+        <p>
+          1.2. Использование Пользователем сайта интернет-магазина Ордер означает согласие с настоящей Политикой
+          конфиденциальности и условиями обработки персональных данных Пользователя.
+        </p>
+        <p>
+          1.3. В случае несогласия с условиями Политики конфиденциальности Пользователь должен прекратить использование
+          сайта интернет-магазина Ордер.
+        </p>
+        <p>
+          1.4. Предоставляя интернет-магазину Ордер свои персональные данные через сайт www.order-nn.ru, Пользователь
+          свободно, своей волей дает согласие на обработку, предусматривающую сбор , запись, систематизация, накопление,
+          хранение, уточнение (обновление, изменение), извлечение, использование, распространение (передачу),
+          обезличивание, удаление, уничтожение его персональных данных согласно условиям настоящей Политики
+          конфиденциальности.
+        </p>
+        <p>
+          1.1. Настоящий документ определяет Политику конфиденциальности и предусматривает методы обработки персональных
+          данных интернет-магазином Ордер конфиденциальной информации клиентов, посещающих сайт www.order-nn.ru.
+        </p>
+        <p>
+          1.2. Использование Пользователем сайта интернет-магазина Ордер означает согласие с настоящей Политикой
+          конфиденциальности и условиями обработки персональных данных Пользователя.
+        </p>
+        <p>
+          1.3. В случае несогласия с условиями Политики конфиденциальности Пользователь должен прекратить использование
+          сайта интернет-магазина Ордер.
+        </p>
+        <p>
+          1.4. Предоставляя интернет-магазину Ордер свои персональные данные через сайт www.order-nn.ru, Пользователь
+          свободно, своей волей дает согласие на обработку, предусматривающую сбор , запись, систематизация, накопление,
+          хранение, уточнение (обновление, изменение), извлечение, использование, распространение (передачу),
+          обезличивание, удаление, уничтожение его персональных данных согласно условиям настоящей Политики
+          конфиденциальности.
+        </p>
+      </div>
+
+    </div>
+    <button class="popup-privacy-policy__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Попап добавление новой карты -->
+  <div class="popup-new-card js-add-new-card">
+    <div class="popup-new-card__inner">
+      <p class="popup-new-card__title">Зарегистрируйте дополнительную карту</p>
+      <div class="popup-new-card__warn">
+        <p>Внимание! Услуга «Бонусы по номеру телефона» будет доступна только для основной карты. Подробнее про услугу
+          можно узнать <a href="javascript:void(0);">тут</a>.</p>
+      </div>
+      <p class="popup-new-card__text">
+        Вы можете зарегистрировать в своем личном кабинете несколько Клубных карт, в том числе одну Виртуальную карту. В
+        качестве основной, может быть установлена только одна карта.
+      </p>
+      <form class="popup-new-card__form js-new-card_form" action="#2" novalidate="true" method="post"
+        name="add_new_card_form">
+        <div class="popup-new-card__input-wrap phone form-group">
+          <input class="popup-new-card__input form-control" type="tel" name="phone_number" id="popup-new-card-tel"
+            placeholder="+7 (900) 000-00-00" minlength="18" required
+            data-pristine-required-message="необходимо заполнить поле">
+          <label class="popup-new-card__label" for="popup-new-card-tel">Мобильный телефон</label>
+        </div>
+
+        <div class="popup-new-card__box">
+          <div class="popup-new-card__input-wrap form-group select-item js-sort-box">
+            <input type="text" class="popup-new-card__input selecting-item js-sort-btn form-control" placeholder="000AA"
+              readonly name="popup_new_card_selected" id="popup-new-card-selected">
+            <label class="popup-new-card__label" for="popup-new-card-selected">Выберите номер</label>
+            <svg class="icon chevron">
+              <use href="./assets/svg/sprite.svg#chevron"></use>
+            </svg>
+            <ul class="popup-new-card__list js-sort-list">
+              <li class="popup-new-card__item js-sort-item">434VI</li>
+              <li class="popup-new-card__item js-sort-item">CFFG3</li>
+              <li class="popup-new-card__item js-sort-item">23DF3</li>
+              <li class="popup-new-card__item js-sort-item">FDG4G</li>
+              <li class="popup-new-card__item js-sort-item">ASE21</li>
+              <li class="popup-new-card__item js-sort-item">SDFWE</li>
+            </ul>
+          </div>
+
+          <div class="popup-new-card__input-wrap number form-group">
+            <input class="popup-new-card__input form-control" type="text" name="popup_new_card_text"
+              id="popup-new-card-text" placeholder="Введите номер карты" required
+              data-pristine-required-message="необходимо заполнить поле">
+          </div>
+        </div>
+
+        <button class="popup-new-card__btn">Добавить карту</button>
+
+      </form>
+    </div>
+    <button class="popup-new-card__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Попап блокировка карты -->
+  <div class="popup-block-card js-block-card">
+    <div class="popup-block-card__inner">
+      <div class="popup-block-card__title">Вы уверены, что хотите
+        заблокировать карту?</div>
+      <form class="popup-block-card__form" method="post" name="popup_block_card_form">
+        <div class="popup-block-card__box">
+          <button class="popup-block-card__btn popup-block-card__btn--white js-btn-blocked js-close"
+            type="submit">да</button>
+          <button class="popup-block-card__btn popup-block-card__btn--green js-close">нет</button>
+        </div>
+        <input type="hidden" class="js-select-blocked-card" name="select_blocked_card">
+      </form>
+    </div>
+    <button class="popup-block-card__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Попап прочтение сообщения -->
+  <div class="popup-message-reading js-modal-read">
+    <div class="popup-message-reading__inner">
+      <p class="popup-message-reading__title">Просмотр сообщения</p>
+      <p class="popup-message-reading__text js-modal-read-text"></p>
+      <p class="popup-message-reading__data js-modal-read-date"></p>
+    </div>
+    <button class="popup-message-reading__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Попап добавление заметки -->
+  <div class="popup-add-note js-modal-note">
+    <div class="popup-add-note__inner">
+      <p class="popup-add-note__title">Добавьте заметку</p>
+      <form class="popup-add-note__form" action="/file_name/" method="post" name="note_form" novalidate="true">
+        <div class="popup-add-note__area-wrap form-group">
+          <textarea class="popup-add-note__area form-control js-modal-note-text" name="popup_message_reading_area"
+            maxlength="3000" placeholder="Текст заметки"></textarea>
+          <p class="popup-add-note__characters"><span>0</span><span>/3000</span></p>
+        </div>
+        <button class="popup-add-note__btn js-modal-btn-save-note" type="submit" disabled>соханить</button>
+      </form>
+    </div>
+    <button class="popup-add-note__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Попап удаления отзыва -->
+  <div class="popup-delete-review js-delete-review">
+
+    <div class="popup-delete-review__inner">
+      <div class="popup-delete-review__holder">
+        <p class="popup-delete-review__title">Вы уверены, что хотите удалить отзыв?</p>
+        <form class="popup-delete-review__form" action="/file_name/" method="post" name="popup_delete_review_form"
+          novalidate="true">
+          <div class="popup-delete-review__box form-group">
+            <button class="popup-delete-review__btn popup-delete-review__btn--white form-control"
+              type="submit">да</button>
+            <button class="popup-delete-review__btn popup-delete-review__btn--green form-control js-close">нет</button>
+          </div>
+          <input type="hidden" class="js-select-delete-review form-control" name="select_delete_review">
+        </form>
+      </div>
+
+      <div class="popup-delete-review__succes">
+        <p class="popup-delete-review__title">Удаление отзыва</p>
+        <div class="popup-delete-review__info">
+          <p class="popup-delete-review__text">Ваш запрос на удаление отзыва направлен администратору сайта.</p>
+          <p class="popup-delete-review__text">Спасибо.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="popup-delete-review__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+
+  </div>
+  <!-- Попап просмотра отзыва -->
+  <div class="popup-view-review js-view-review">
+    <div class="popup-view-review__inner">
+      <p class="popup-delete-review__title">Просмотр отзыва</p>
+      <div class="popup-view-review__status">
+        <div class="reviews__rating">
+          <div class="reviews__rating-inner">
+            <ul class="reviews__rating-list">
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+              <li class="reviews__rating-item">
+                <svg class="icon rating active">
+                  <use href="./assets/svg/sprite.svg#rating"></use>
+                </svg>
+              </li>
+            </ul>
+            <span class="reviews__grade">5</span>
+          </div>
+        </div>
+        <div class="reviews__state">
+          <p class="reviews__flag _moderation">На модерации</p>
+        </div>
+      </div>
+      <div class="popup-view-review__heading">
+        Дрель-шуруповерт аккумуляторная Интерскол ДА-10/18В МиниМАКС кейс 18В 42Нм(бесщеточн)
+        2акк*2.0а/ч (709.2.2.70)
+      </div>
+      <div class="popup-view-review__text">
+        Синтагма, как бы это ни казалось парадоксальным, отталкивает голос персонажа. Реципиент аннигилирует замысел.
+        Контрапункт вызывает метафоричный стиль. Дискурс последовательно дает словесный не-текст. Декодирование приводит
+        экзистенциальный не-текст. Драма интегрирует деструктивный эпитет.
+      </div>
+      <div class="popup-view-review__features">
+        <div class="popup-view-review__block">
+          <p class="popup-view-review__subtitle">Плюсы:</p>
+          <ul class="popup-view-review__list">
+            <li class="popup-view-review__item">качественная сборка</li>
+            <li class="popup-view-review__item">отличная цена</li>
+            <li class="popup-view-review__item">пользуюсь уже 5 лет</li>
+          </ul>
+        </div>
+        <div class="popup-view-review__block">
+          <p class="popup-view-review__subtitle">Минусы:</p>
+          <ul class="popup-view-review__list">
+            <li class="popup-view-review__item">не нашел</li>
+          </ul>
+        </div>
+        <div class="popup-view-review__block">
+          <p class="popup-view-review__subtitle">Покупал для:</p>
+          <ul class="popup-view-review__list">
+            <li class="popup-view-review__item">не указано</li>
+          </ul>
+        </div>
+      </div>
+      <div class="popup-view-review__action">
+        <div class="popup-view-review__date">06.07.2022 16:26</div>
+        <div class="popup-view-review__feedback">
+          <div class="popup-view-review__feedback-btn _like">
+            <svg class="icon feedback">
+              <use href="./assets/svg/sprite.svg#feedback"></use>
+            </svg>
+            <span>0</span>
+          </div>
+          <div class="popup-view-review__feedback-btn _dislike">
+            <svg class="icon feedback">
+              <use href="./assets/svg/sprite.svg#feedback"></use>
+            </svg>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="popup-view-review__close js-close">
+      <svg class="icon close">
+        <use href="./assets/svg/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+
+
+
+  <script defer src="assets/plugins/swiper/swiper-bundle.min.js"></script>
+  <script defer src="assets/plugins/pristine/pristine.min.js"></script>
+
+
+  <script defer src="js/main.js"></script>
+</body>
+
+</html>
