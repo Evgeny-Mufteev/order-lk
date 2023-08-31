@@ -1014,8 +1014,8 @@
                   <li class="message__list-item messages__item--read"><p>Сообщение1</p></li>
                   <li class="message__list-item messages__item--read"><p>Сообщение2</p></li>
                   <li class="message__list-item messages__item--read"><p>Сообщение3</p></li>
-                  <li class="message__list-item"><p>Сообщение4</p></li>
-                  <li class="message__list-item"><p>Сообщение5</p></li>
+                  <li class="message__list-item"><p>Сообщение4 (не прочитанное, клик уменьшит счетчик)</p></li>
+                  <li class="message__list-item"><p>Сообщение5 (не прочитанное, клик уменьшит счетчик)</p></li>
                 </ul>
               </section>
 
@@ -1024,7 +1024,19 @@
               <p>Мои отзывы</p>
             </div>
             <div class="tabs__item content__item">
-              <p>Заметки</p>
+              <section class="notes">
+                <div class="notes__head">
+                  <h3>Заметки</h3>
+                  <span class="notes__counter"></span><br><br>
+                </div>
+                <ul class="notes__list">
+                  <li class="notes__list-item"><p>Сообщение1</p><button class="js-delete-btn">Удалить</button></li>
+                  <li class="notes__list-item"><p>Сообщение2</p><button class="js-delete-btn">Удалить</button></li>
+                  <li class="notes__list-item"><p>Сообщение3</p><button class="js-delete-btn">Удалить</button></li>
+                  <li class="notes__list-item"><p>Сообщение4</p><button class="js-delete-btn">Удалить</button></li>
+                  <li class="notes__list-item"><p>Сообщение5</p><button class="js-delete-btn">Удалить</button></li>
+                </ul>
+              </section>
             </div>
 
           </div>
