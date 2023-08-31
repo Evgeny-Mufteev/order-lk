@@ -2504,7 +2504,7 @@ main {
     font-weight: 400;
     line-height: normal;
     column-gap: 8px;
-    margin-bottom: 21px;
+    margin-bottom: 16px;
   }
 }
 
@@ -2741,6 +2741,7 @@ main {
         right: 16px;
         transform: rotate(180deg);
         cursor: pointer;
+        pointer-events: none;
       }
 
     }
@@ -3897,6 +3898,10 @@ main {
       padding-bottom: 0;
       border-bottom: none;
     }
+
+    &__link {
+      margin-bottom: 24px;
+    }
   }
 
   .popup-saving-profile {
@@ -4679,6 +4684,11 @@ main {
   }
 
   .make {
+
+    &__info {
+      padding: 24px 10px;
+    }
+
     &__title {
       flex-direction: column;
       align-items: flex-start;
@@ -4703,6 +4713,45 @@ main {
     &__features {
       font-weight: 500;
       font-family: RobotoMedium;
+    }
+
+    &__product {
+      flex-direction: column;
+    }
+
+    &__goods {
+      padding: 24px 10px;
+    }
+
+    &__details {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__final {
+      align-items: flex-start;
+      margin-top: 24px;
+    }
+
+    &__products {
+      margin-top: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ECECEC;
+    }
+
+    &__name {
+      margin-bottom: 16px;
+      max-width: unset;
+    }
+
+    &__amount,
+    &__sum {
+      font-size: 14px;
+    }
+
+    &__link {
+      margin-bottom: 16px;
     }
   }
 

@@ -31,7 +31,7 @@
               </svg>
               Мой профиль
             </button>
-            <button class="tabs__btn content__btn mob-menu-2">
+            <button class="tabs__btn content__btn mob-menu-2 is-active">
               <svg class="badges icon fire">
                 <use href="./assets/svg/sprite.svg#fire"></use>
               </svg>
@@ -49,13 +49,13 @@
               </svg>
               Сообщения
             </button>
-            <button class="tabs__btn content__btn content__btn-mobile-hidden is-active">
+            <button class="tabs__btn content__btn content__btn-mobile-hidden">
               <svg class="badges icon book">
                 <use href="./assets/svg/sprite.svg#book"></use>
               </svg>
               Мои отзывы
             </button>
-            <button class="tabs__btn content__btn content__btn-mobile-hidden">
+            <button class="tabs__btn content__btn content__btn-mobile-hidden ">
               <svg class="badges icon pin">
                 <use href="./assets/svg/sprite.svg#pin"></use>
               </svg>
@@ -94,7 +94,7 @@
             <div class="tabs__item content__item">
               <div class="profile">
                 <h2 class="profile__title">Мой профиль</h2>
-                <form class="profile__form js-profile-form" method="post" action="#1" name="profile_form"
+                <form class="profile__form js-profile-form" method="post" action="/file_name/" name="profile_form"
                   novalidate="true">
 
                   <div class="profile__box">
@@ -222,7 +222,7 @@
             </div>
 
             <!-- Бонусы -->
-            <div class="tabs__item content__item">
+            <div class="tabs__item content__item is-active">
               <div class="bonus">
                 <div class="bonus__inner swiper cart-slider">
                   <div class="future-slider">
@@ -274,8 +274,7 @@
                             </p>
                           </div>
                           <div class="bonus__desc-btns">
-                            <button
-                              class="bonus__desc-btn bonus__desc-btn--white js-btn-block-card js-btn-block-card">Заблокировать
+                            <button class="bonus__desc-btn bonus__desc-btn--white js-btn-block-card">Заблокировать
                               карту</button>
                             <button class="bonus__desc-btn bonus__desc-btn--green js-add-card">Добавить новую
                               карту</button>
@@ -1502,7 +1501,7 @@
               </div>
             </div>
             <!-- Отзывы -->
-            <div class="tabs__item content__item is-active">
+            <div class="tabs__item content__item">
               <div class="reviews">
                 <!-- Если нет отзывов -->
                 <div class="reviews__block">
@@ -2094,7 +2093,7 @@
         Вы можете зарегистрировать в своем личном кабинете несколько Клубных карт, в том числе одну Виртуальную карту. В
         качестве основной, может быть установлена только одна карта.
       </p>
-      <form class="popup-new-card__form js-new-card_form" action="#2" novalidate="true" method="post"
+      <form class="popup-new-card__form js-new-card_form" action="/file_name/" novalidate="true" method="post"
         name="add_new_card_form">
         <div class="popup-new-card__input-wrap phone form-group">
           <input class="popup-new-card__input form-control" type="tel" name="phone_number" id="popup-new-card-tel"

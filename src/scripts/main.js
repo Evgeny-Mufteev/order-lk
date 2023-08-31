@@ -167,8 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
       infoMessage.textContent = 'Пароль должен содержать не менее 6 символов';
     }
   };
-  newPasswordInput.addEventListener('input', checkPasswords);
-  confirmPasswordInput.addEventListener('input', checkPasswords);
+  if (newPasswordInput && confirmPasswordInput) {
+    newPasswordInput.addEventListener('input', checkPasswords);
+    confirmPasswordInput.addEventListener('input', checkPasswords);
+  }
 
   // Переключение видимости паролей
   const togglePasswordVisibility = () => {
@@ -212,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // вызов и закрытие модального окна
-  const handleModalPopup = (btn, blockModal) => {
+  const handleModalPopup = (btn, blockModal, shouldStopPropagation = false) => {
     const btns = document.querySelectorAll(btn);
     const modal = document.querySelector(blockModal);
 
@@ -223,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btns.forEach((btnItem) => {
         btnItem.addEventListener('click', (evt) => {
           evt.preventDefault();
-          evt.stopPropagation();
+          if (shouldStopPropagation) evt.stopPropagation();
           modal.classList.add('active');
           overlay.classList.add('active');
           document.body.classList.add('no-scroll');
@@ -233,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
       arrCloseButton.forEach((closeButton) => {
         closeButton.addEventListener('click', (evt) => {
           evt.preventDefault();
-          evt.stopPropagation();
           modal.classList.remove('active');
           modal?.classList.remove('sucsess');
           overlay.classList.remove('active');
@@ -244,7 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       overlay.addEventListener('click', (evt) => {
         evt.preventDefault();
-        evt.stopPropagation();
         modal.classList.remove('active');
         modal?.classList.remove('sucsess');
         overlay.classList.remove('active');
@@ -256,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('keydown', (evt) => {
           if (evt.key === 'Escape') {
             evt.preventDefault();
-            evt.stopPropagation();
             modal.classList.remove('active');
             overlay.classList.remove('active');
             document.body.classList.remove('no-scroll');
@@ -274,20 +273,22 @@ document.addEventListener('DOMContentLoaded', () => {
   handleModalPopup('.js-btn-read', '.js-modal-read');
   handleModalPopup('.js-btn-add-none', '.js-modal-note');
   handleModalPopup('.js-btn-editing', '.js-modal-note');
-  handleModalPopup('.js-btn-del-reviews', '.js-delete-review');
+
+  handleModalPopup('.js-btn-del-reviews', '.js-delete-review', true);
   handleModalPopup('.js-reviews-item', '.js-view-review');
 
   // Валидация формы
   const handleFormSubmitPage = (formItem, popup) => {
     const form = document.querySelector(formItem);
     const modalBlock = document.querySelector(popup);
-    const btn = form.querySelector('.js-profile-btn-submit');
-    const email = form.querySelector('input[name="profile_email"]');
-    const phone = form.querySelector('input[name="profile_number"]');
 
     if (!form) {
       return;
     }
+
+    const btn = form.querySelector('.js-profile-btn-submit');
+    const email = form.querySelector('input[name="profile_email"]');
+    const phone = form.querySelector('input[name="profile_number"]');
 
     const pristine = new Pristine(form);
 
@@ -318,6 +319,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log(formData);
         // evt.target.submit();
+        const url = form.getAttribute('action');
+        sendData(url, formData);
       }
     });
   };
@@ -363,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Удаление заголовков карт в слайдере
   const blockBonus = document.querySelector('.bonus');
-  const arrTitle = blockBonus.querySelectorAll('.profile__title');
+  const arrTitle = blockBonus ? blockBonus.querySelectorAll('.profile__title') : [];
 
   const removeCardTitlesFromSlider = () => {
     if (window.innerWidth < 768) {
@@ -425,14 +428,18 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.js-select-blocked-card').value =
         el.closest('.js-bonus-card-item').id;
     }
+
     if (el.closest('.js-reviews-item')) {
       document.querySelector('.js-select-delete-review').value = el.closest('.js-reviews-item').id;
     }
   };
   const blockFormCard = document.querySelector('.bonus__inner');
   const blockFormReview = document.querySelector('.reviews__items');
-  blockFormCard.addEventListener('click', lockSelectedCard);
-  blockFormReview.addEventListener('click', lockSelectedCard);
+
+  if (blockFormCard && blockFormReview) {
+    blockFormCard.addEventListener('click', lockSelectedCard);
+    blockFormReview.addEventListener('click', lockSelectedCard);
+  }
 
   // Блокировака карты
   const blockMap = () => {
@@ -494,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el.closest('.js-sort-modal-btn') || el.closest('.js-sort-modal')) {
       modal.classList.add('active');
     } else {
-      if (modal.classList.contains('active')) {
+      if (modal && modal.classList.contains('active')) {
         modal.classList.remove('active');
       }
     }
@@ -581,7 +588,6 @@ document.addEventListener('DOMContentLoaded', () => {
       modalDate.textContent = date;
     };
 
-    // Назначаем обработчик клика на каждый блок
     blocks.forEach((block) => {
       block.addEventListener('click', handleClick);
     });
@@ -640,34 +646,47 @@ document.addEventListener('DOMContentLoaded', () => {
   editNote();
 
   // Подсчет количества символов в попапе добавлнеие заметки
-  const countCharacters = (el) => {
-    el = el.target;
+  const countCharacters = () => {
     const inputElement = document.querySelector('.js-modal-note-text');
     const spanElement = document.querySelector('.popup-add-note__characters span');
+    const arrNoteEditingButtons = document.querySelectorAll('.js-btn-editing');
+    const addNoteButton = document.querySelector('.js-btn-add-none');
     const MAX_CHARACTERS = 3000;
 
-    if (!inputElement && !spanElement) return;
-
-    const updateCharacterCount = () => {
-      let { value } = inputElement;
-      if (value.length > MAX_CHARACTERS) {
-        value = value.slice(0, MAX_CHARACTERS);
-      }
-      spanElement.textContent = value.length;
-    };
-
-    inputElement.addEventListener('input', updateCharacterCount);
-
-    if (el.closest('.js-btn-add-none')) {
-      spanElement.textContent = 0;
-      inputElement.value = '';
+    if (!inputElement || !spanElement) {
+      return;
     }
 
-    if (el.closest('.js-btn-editing')) {
-      updateCharacterCount();
+    inputElement.addEventListener('input', (evt) => {
+      evt.preventDefault();
+      const textLength = inputElement.value.length;
+
+      if (textLength > MAX_CHARACTERS) {
+        inputElement.value = inputElement.value.slice(0, MAX_CHARACTERS);
+        spanElement.textContent = MAX_CHARACTERS;
+      } else if (spanElement.textContent !== textLength.toString()) {
+        spanElement.textContent = textLength;
+      }
+    });
+
+    if (arrNoteEditingButtons.length > 0) {
+      arrNoteEditingButtons.forEach((btn) => {
+        btn.addEventListener('click', (evt) => {
+          evt.preventDefault();
+          spanElement.textContent = 0;
+          spanElement.textContent = inputElement.value.length;
+        });
+      });
+    }
+
+    if (addNoteButton) {
+      addNoteButton.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        spanElement.textContent = 0;
+      });
     }
   };
-  document.addEventListener('click', countCharacters);
+  countCharacters();
 
   // Удаление заметки
   const deleteNote = (el) => {
@@ -708,42 +727,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
   requestDeleteReview();
+
+  // подсчет и вывод непрочитанного количества сообщений и заметок
+  const displayUnreadMessageCount = (blockSelector, messageSelector, spanSelector) => {
+    const updateUnreadCount = () => {
+      const content = document.querySelector(blockSelector);
+      const messageBlocks = content?.querySelectorAll(messageSelector) || [];
+      const quantitySpan = content?.querySelector(spanSelector);
+
+      if (quantitySpan) quantitySpan.textContent = messageBlocks.length.toString();
+    };
+
+    updateUnreadCount();
+
+    const handleDomChange = () => {
+      updateUnreadCount();
+    };
+
+    const observer = new MutationObserver(handleDomChange);
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  };
+
+  displayUnreadMessageCount(
+    '.messages',
+    '.js-read-block:not(.messages__item--read)',
+    '.js-read-quantity',
+  );
+  displayUnreadMessageCount('.notes', '.js-note-editing', '.js-read-quantity');
 });
-
-// подсчет и вывод непрочитанного количества сообщений и заметок
-// const displayUnreadMessageCount = (el) => {
-//   el = el.target;
-//   const spanElement = document.querySelector('.js-read-quantity');
-//   const arrBlocks = document.querySelectorAll('.js-note-editing');
-
-//   if (el.closest('.js-btn-notes-delete')) {
-//     const a = (spanElement.textContent = arrBlocks.length).toString();
-
-//     el.closest('.profile__title').querySelector('.js-read-quantity').textContent = a;
-//   }
-// };
-// document.addEventListener('click', displayUnreadMessageCount);
-
-// const displayUnreadMessageCount = (blockSelector, spanSelector) => {
-//   const updateUnreadCount = () => {
-//     const messageBlocks = document.querySelectorAll(blockSelector);
-//     const quantitySpan = document.querySelector(spanSelector);
-
-//     if (quantitySpan) {
-//       quantitySpan.textContent = messageBlocks.length.toString();
-//     }
-//   };
-//   updateUnreadCount();
-
-//   const handleDomChange = () => {
-//     updateUnreadCount();
-//   };
-
-//   const observer = new MutationObserver(handleDomChange);
-
-//   observer.observe(document.body, {
-//     childList: true,
-//     subtree: true,
-//   });
-// };
-// displayUnreadMessageCount('.js-read-block:not(.messages__item--read)', '.js-read-quantity');
