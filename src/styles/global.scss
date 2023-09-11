@@ -1110,7 +1110,6 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-top: 48px;
   }
 
   &__card-balance {
@@ -1911,6 +1910,7 @@ main {
     font-weight: 500;
     line-height: normal;
     margin-top: 32px;
+    font-family: RobotoMedium;
   }
 
   .profile__title {
@@ -1949,6 +1949,7 @@ main {
     padding: 19.5px 36px 24px;
     border-bottom: 1px solid #ECECEC;
     cursor: pointer;
+    transition: var(--base-transition);
 
     &:last-child {
       padding-bottom: 36px;
@@ -1959,9 +1960,13 @@ main {
       padding-top: 16px;
     }
 
-    &--read {
+    &:hover {
       background: #ECECEC;
     }
+
+    // &--read {
+    //   background: #ECECEC;
+    // }
   }
 
   &__text {
@@ -2013,7 +2018,7 @@ main {
 .notes {
 
   &__block {
-    padding: 36px;
+    padding: 36px 0;
     border-radius: 10px;
     background: #FFF;
     box-shadow: 2px 2px 2px 0px rgba(215, 215, 215, 0.25);
@@ -2026,6 +2031,7 @@ main {
   .profile__title {
     position: relative;
     display: inline;
+    padding-left: 36px;
 
     span {
       color: #353535;
@@ -2054,6 +2060,7 @@ main {
     font-weight: 500;
     line-height: normal;
     margin-top: 32px;
+    padding-left: 36px;
   }
 
   &__items {
@@ -2061,10 +2068,15 @@ main {
   }
 
   &__item {
-    padding: 16px 0;
+    padding: 16px 36px;
+    transition: var(--base-transition);
 
     &:not(:last-child) {
       border-bottom: 1px solid #ECECEC;
+    }
+
+    &:hover {
+      background: #ECECEC;
     }
   }
 
@@ -2124,7 +2136,7 @@ main {
 
 .reviews {
   &__block {
-    padding: 36px;
+    padding: 36px 0;
     border-radius: 10px;
     background: #FFF;
     box-shadow: 2px 2px 2px 0px rgba(215, 215, 215, 0.25);
@@ -2137,6 +2149,7 @@ main {
   .profile__title {
     position: relative;
     display: inline;
+    padding-left: 36px;
 
     span {
       color: #353535;
@@ -2165,6 +2178,7 @@ main {
     font-weight: 500;
     line-height: normal;
     margin-top: 32px;
+    padding-left: 36px;
   }
 
   &__rating-list {
@@ -2214,7 +2228,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 32px 0 12px;
+    margin: 0 0 12px;
   }
 
   &__title {
@@ -2264,13 +2278,22 @@ main {
   }
 
   &__item {
-    padding-bottom: 16px;
+    padding: 16px 36px;
     border-bottom: 1px solid #ECECEC;
     cursor: pointer;
+    transition: var(--base-transition);
+
+    &:hover {
+      background: #ECECEC;
+    }
 
     &:last-child {
       padding-bottom: 0;
       border-bottom: none;
+    }
+
+    &:first-child {
+      margin-top: 16px;
     }
 
     &._status-deleted {
@@ -2943,7 +2966,6 @@ main {
   display: none;
   width: 516px;
   height: auto;
-  min-height: 305px;
   border-radius: 10px;
   background: #FFF;
   position: fixed;
@@ -3064,6 +3086,7 @@ main {
     width: 100%;
     height: 48px;
     margin-top: 24px;
+    text-transform: capitalize;
   }
 
   &__area-wrap {
@@ -3153,6 +3176,7 @@ main {
     height: 48px;
     border-radius: 4px;
     transition: var(--base-transition);
+    text-transform: capitalize;
   }
 
   &__btn--white {
@@ -3630,10 +3654,6 @@ main {
       margin-bottom: 24px;
     }
 
-    &__card {
-      margin-top: 32px;
-    }
-
     &__desc {
       margin-top: 32px;
     }
@@ -3814,8 +3834,21 @@ main {
   }
 
   .notes {
+
+    .profile__title {
+      padding-left: 24px;
+    }
+
+    &__no-notes {
+      padding-left: 24px;
+    }
+
     &__block {
-      padding: 24px;
+      padding: 24px 0;
+    }
+
+    &__item {
+      padding: 16px 24px;
     }
   }
 
@@ -3836,13 +3869,17 @@ main {
     }
 
     &__block {
-      padding: 24px;
+      padding: 24px 0;
     }
 
     &__status {
       &:not(:first-child) {
         margin-top: 16px;
       }
+    }
+
+    &__item {
+      padding: 16px 24px;
     }
   }
 
@@ -4041,13 +4078,14 @@ main {
       position: fixed;
       bottom: 0;
       width: -webkit-fill-available;
-      left: 10px;
-      right: 10px;
+      left: 50%;
+      transform: translateX(-50%);
       bottom: 20px;
-      z-index: 20;
+      z-index: 19;
       box-shadow: 0px 4px 18px 0px rgba(210, 210, 210, 0.25);
       margin-bottom: 0;
       height: 60px;
+      width: 95%;
     }
 
     &__btn {
@@ -4082,6 +4120,7 @@ main {
       width: 177px;
       background: #fff;
       border-radius: 10px;
+      z-index: 20;
 
       &.active {
         display: flex;
@@ -4620,11 +4659,16 @@ main {
     &__no-notes {
       font-size: 14px;
       margin-top: 16px;
+      padding-left: 10px;
     }
 
-    .profile__title span {
-      top: 0;
-      right: -30px;
+    .profile__title {
+      padding-left: 10px;
+
+      span {
+        top: 0;
+        right: -30px;
+      }
     }
 
     &__text {
@@ -4633,10 +4677,12 @@ main {
     }
 
     &__block {
-      padding: 24px 10px;
+      padding: 24px 0;
     }
 
     &__item {
+      padding: 16px 10px;
+
       &:last-child {
         padding-bottom: 12px;
       }
@@ -4646,10 +4692,27 @@ main {
       padding-bottom: 12px;
     }
 
+    &__add-note {
+      padding: 0 10px;
+    }
+
 
   }
 
   .reviews {
+
+    .profile__title {
+      padding-left: 10px;
+    }
+
+    &__no-reviews {
+      padding-left: 10px;
+      color: #353535;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
 
     &__status {
       flex-direction: column-reverse;
@@ -4677,8 +4740,10 @@ main {
     }
 
     &__item {
+      padding: 12px 10px;
+
       &:first-child {
-        margin-top: 16px;
+        margin-top: 4px;
       }
     }
   }
@@ -4756,7 +4821,7 @@ main {
   }
 
   .popup-saving-profile {
-    width: 288px;
+    width: 90%;
     height: 88px;
 
     &__inner {
@@ -4774,7 +4839,7 @@ main {
   }
 
   .popup-privacy-policy {
-    width: 100%;
+    width: 90%;
     height: 80%;
 
 
@@ -4801,7 +4866,7 @@ main {
   }
 
   .popup-new-card {
-    width: 320px;
+    width: 90%;
     height: auto;
 
     &__inner {
@@ -4824,6 +4889,10 @@ main {
       &.select-item,
       &.number {
         width: 100%;
+      }
+
+      &.select-item svg {
+        top: 14px;
       }
     }
 
@@ -4851,7 +4920,7 @@ main {
   }
 
   .popup-block-card {
-    width: 288px;
+    width: 90%;
     height: 166px;
 
     &__inner {
@@ -4909,7 +4978,7 @@ main {
   }
 
   .popup-message-reading {
-    width: 94%;
+    width: 90%;
     min-height: unset;
 
     &__inner {
@@ -4923,7 +4992,7 @@ main {
   }
 
   .popup-add-note {
-    width: 94%;
+    width: 90%;
     min-height: 239px;
 
     &__inner {
@@ -4945,7 +5014,7 @@ main {
   }
 
   .popup-delete-review {
-    width: 288px;
+    width: 90%;
     height: 166px;
 
     &__inner {
@@ -4967,7 +5036,7 @@ main {
   }
 
   .popup-view-review {
-    width: 288px;
+    width: 90%;
 
     &__inner {
       padding: 16px;

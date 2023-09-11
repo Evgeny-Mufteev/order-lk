@@ -730,26 +730,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // подсчет и вывод непрочитанного количества сообщений и заметок
   const displayUnreadMessageCount = (blockSelector, messageSelector, spanSelector) => {
-    const updateUnreadCount = () => {
-      const content = document.querySelector(blockSelector);
-      const messageBlocks = content?.querySelectorAll(messageSelector) || [];
-      const quantitySpan = content?.querySelector(spanSelector);
+    if (window.innerWidth > 768) {
+      const updateUnreadCount = () => {
+        const content = document.querySelector(blockSelector);
+        const messageBlocks = content?.querySelectorAll(messageSelector) || [];
+        const quantitySpan = content?.querySelector(spanSelector);
 
-      if (quantitySpan) quantitySpan.textContent = messageBlocks.length.toString();
-    };
+        if (quantitySpan) quantitySpan.textContent = messageBlocks.length.toString();
+      };
 
-    updateUnreadCount();
-
-    const handleDomChange = () => {
       updateUnreadCount();
-    };
 
-    const observer = new MutationObserver(handleDomChange);
+      const handleDomChange = () => {
+        updateUnreadCount();
+      };
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+      const observer = new MutationObserver(handleDomChange);
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+    }
   };
 
   displayUnreadMessageCount(
