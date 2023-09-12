@@ -760,4 +760,25 @@ document.addEventListener('DOMContentLoaded', () => {
     '.js-read-quantity',
   );
   displayUnreadMessageCount('.notes', '.js-note-editing', '.js-read-quantity');
+
+  // Изменение видимости меню при актвных модальных окнах
+  const toggleMenuVisibilityOnActiveModals = () => {
+    const mobileMenu = document.querySelector('.js-toggle-menu');
+    const btnOther = mobileMenu.querySelector('.js-btn-menu-modal');
+    const arrHiddenMenuItems = mobileMenu.querySelectorAll('.js-hidden-menu');
+    const overlay = document.querySelector('.overlay');
+    btnOther.addEventListener('click', (evt) => {
+      mobileMenu.classList.add('bb');
+    });
+    overlay.addEventListener('click', (evt) => {
+      mobileMenu.classList.remove('bb');
+    });
+    console.log(arrHiddenMenuItems);
+    arrHiddenMenuItems.forEach((el) => {
+      el.addEventListener('click', (evt) => {
+        mobileMenu.classList.remove('bb');
+      });
+    });
+  };
+  toggleMenuVisibilityOnActiveModals();
 });

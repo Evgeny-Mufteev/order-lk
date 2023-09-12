@@ -2940,6 +2940,7 @@ main {
     height: 48px;
     border-radius: 4px;
     transition: var(--base-transition);
+    text-transform: capitalize;
   }
 
   &__btn--white {
@@ -4086,6 +4087,10 @@ main {
       margin-bottom: 0;
       height: 60px;
       width: 95%;
+
+      &.bb {
+        z-index: 20;
+      }
     }
 
     &__btn {
@@ -4571,7 +4576,9 @@ main {
       font-style: normal;
       font-weight: 400;
       line-height: normal;
-      padding: 5px 10px;
+      width: 177px;
+      height: 36px;
+      padding: 0 12px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
